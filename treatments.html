@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Treatments — Lua's Beauty · North Perth Skin & Beauty Studio</title>
+<meta name="description" content="The full Lua's Beauty treatment menu — signature facials, Bioage skin protocols, lash & brow, body treatments and add-ons. North Perth, Western Australia." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+/* === Treatments Page === */
+.tx-hero {
+  padding: 200px 56px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.tx-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(212, 184, 156, 0.18), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(232, 221, 201, 0.4), transparent 60%);
+  pointer-events: none;
+}
+.tx-hero__inner { position: relative; max-width: 920px; margin: 0 auto; }
+.tx-hero .eyebrow { justify-content: center; }
+.tx-hero .eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.tx-hero__title {
+  font-family: var(--display);
+  font-size: clamp(56px, 7.4vw, 124px);
+  line-height: 0.96; letter-spacing: -0.01em;
+  margin: 0 0 32px; font-weight: 400;
+}
+.tx-hero__title em { font-family: var(--serif); font-style: italic; color: var(--gold); font-weight: 300; }
+.tx-hero__sub {
+  font-family: var(--serif);
+  font-size: 22px; line-height: 1.55; font-style: italic;
+  color: var(--ink-soft); max-width: 640px; margin: 0 auto 48px;
+}
+
+/* Category nav */
+.tx-cats {
+  display: flex; gap: 8px; justify-content: center;
+  flex-wrap: wrap; padding: 0 56px;
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(245, 239, 231, 0.92);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  padding: 24px 56px;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.tx-cat {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 12px 22px; border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: all 0.4s var(--ease);
+  cursor: pointer;
+  background: transparent;
+  font-family: var(--sans);
+  color: var(--ink-soft);
+}
+.tx-cat:hover { border-color: var(--ink); color: var(--ink); }
+.tx-cat.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+/* Category sections */
+.tx-section { padding: 120px 56px; }
+.tx-section:nth-child(odd) { background: var(--cream); }
+.tx-section:nth-child(even) { background: var(--bg); }
+
+.tx-section__head {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 56px; align-items: start;
+  max-width: 1200px; margin: 0 auto 80px;
+}
+.tx-section__num {
+  font-family: var(--display);
+  font-size: 80px; line-height: 1;
+  color: var(--gold);
+  font-style: italic;
+  font-family: var(--serif);
+  font-weight: 300;
+}
+.tx-section__title-block { padding-top: 12px; }
+.tx-section__cat-name {
+  font-size: 11px; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 24px; font-weight: 500;
+}
+.tx-section__title {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1; margin: 0 0 24px; font-weight: 400;
+}
+.tx-section__title em { font-family: var(--serif); font-style: italic; color: var(--gold); font-weight: 300; }
+.tx-section__intro {
+  font-size: 16px; line-height: 1.85;
+  color: var(--ink-soft);
+  max-width: 620px;
+}
+
+/* Service rows */
+.tx-list { max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--line); }
+.tx-row {
+  display: grid;
+  grid-template-columns: 60px 1.4fr 2fr 100px 140px;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  transition: background 0.4s var(--ease), padding 0.4s var(--ease);
+  position: relative;
+}
+.tx-row:hover {
+  background: rgba(255, 255, 255, 0.4);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.tx-row__index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.tx-row__name {
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 400;
+  color: var(--ink);
+}
+.tx-row__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.tx-row__time {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tx-row__price-wrap {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 20px;
+  white-space: nowrap;
+}
+.tx-row__price {
+  font-family: var(--display);
+  font-size: 30px;
+  color: var(--ink);
+  font-weight: 400;
+}
+.tx-row__price-from {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--muted);
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.tx-row__book {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.tx-row__book:hover { color: var(--gold); border-color: var(--gold); }
+
+.tx-row--quote .tx-row__price { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--gold); }
+
+.tx-note {
+  max-width: 1200px; margin: 32px auto 0;
+  padding: 24px 28px;
+  background: rgba(169, 133, 86, 0.06);
+  border-left: 2px solid var(--gold);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Bottom CTA */
+.tx-cta {
+  padding: 160px 56px;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.tx-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(169, 133, 86, 0.22), transparent 55%),
+    radial-gradient(ellipse at 75% 70%, rgba(212, 184, 156, 0.16), transparent 55%);
+}
+.tx-cta__inner { position: relative; max-width: 800px; margin: 0 auto; }
+.tx-cta .eyebrow { color: var(--gold-light); justify-content: center; }
+.tx-cta .eyebrow::before, .tx-cta .eyebrow::after { background: var(--gold-light); }
+.tx-cta .eyebrow::after { content: ''; width: 36px; height: 1px; }
+.tx-cta__title {
+  font-family: var(--display);
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1; margin: 0 0 32px; font-weight: 400;
+}
+.tx-cta__title em { font-family: var(--serif); font-style: italic; color: var(--gold-light); font-weight: 300; }
+.tx-cta__sub {
+  font-family: var(--serif); font-size: 20px; font-style: italic;
+  color: rgba(250, 246, 239, 0.78);
+  max-width: 540px; margin: 0 auto 40px;
+}
+.tx-cta__ctas { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+.tx-cta .btn--primary { background: var(--gold); color: var(--cream); }
+.tx-cta .btn--primary:hover { background: var(--gold-light); }
+.tx-cta .btn--ghost { color: var(--cream); border-color: rgba(250, 246, 239, 0.4); }
+.tx-cta .btn--ghost:hover { background: var(--cream); color: var(--ink); }
+
+@media (max-width: 1024px) {
+  .tx-hero { padding: 140px 32px 60px; }
+  .tx-cats { padding: 18px 32px; gap: 6px; }
+  .tx-cat { padding: 10px 16px; font-size: 10px; letter-spacing: 0.18em; }
+  .tx-section { padding: 80px 32px; }
+  .tx-section__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px; }
+  .tx-section__num { font-size: 56px; }
+
+  .tx-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 28px 0;
+  }
+  .tx-row__index { display: none; }
+  .tx-row__name { font-size: 22px; }
+  .tx-row__desc { font-size: 13px; }
+  .tx-row__time { font-size: 10px; margin-top: 4px; }
+  .tx-row__price-wrap { justify-content: flex-start; margin-top: 8px; }
+  .tx-row__price { font-size: 24px; }
+
+  .tx-cta { padding: 100px 32px; }
+}
+@media (max-width: 600px) {
+  .tx-hero, .tx-section, .tx-cta { padding-left: 22px; padding-right: 22px; }
+  .tx-cats { padding: 14px 22px; }
+  .tx-cats { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
+  .tx-cat { flex-shrink: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+  <ul class="nav__menu">
+    <li><a href="index.html#philosophy">Philosophy</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="index.html#founder">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://wa.link/5w4hsv" class="nav__cta">Book on WhatsApp</a>
+  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="tx-hero">
+  <div class="tx-hero__inner reveal">
+    <p class="eyebrow">The Treatment Menu</p>
+    <h1 class="tx-hero__title">Every <em>ritual</em>, considered.</h1>
+    <p class="tx-hero__sub">
+      A curated menu of facials, skin protocols and lash &amp; brow treatments — each shaped around your skin, delivered with care from a North Perth studio that feels like nowhere else.
+    </p>
+    <a href="https://wa.link/5w4hsv" class="btn btn--primary">Book on WhatsApp <span class="btn__arrow">→</span></a>
+  </div>
+</section>
+
+<!-- CATEGORY NAV -->
+<div class="tx-cats">
+  <a class="tx-cat" href="#signature">Signature Skin</a>
+  <a class="tx-cat" href="#bioage">Bioage Protocols</a>
+  <a class="tx-cat" href="#lashbrow">Lash &amp; Brow</a>
+  <a class="tx-cat" href="#body">Body</a>
+  <a class="tx-cat" href="#addons">Add-Ons</a>
+</div>
+
+<!-- =============== 1. SIGNATURE SKIN TREATMENTS =============== -->
+<section class="tx-section" id="signature">
+  <div class="tx-section__head reveal">
+    <div class="tx-section__num">01</div>
+    <div class="tx-section__title-block">
+      <p class="tx-section__cat-name">Signature Skin Treatments</p>
+      <h2 class="tx-section__title">The studio's <em>signature</em> facials.</h2>
+      <p class="tx-section__intro">
+        Bespoke facial rituals — designed to deliver visible results while feeling like the most beautifully restorative pause of your week. Every protocol begins with a personalised skin assessment.
+      </p>
+    </div>
+  </div>
+
+  <div class="tx-list">
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 01</div>
+      <h3 class="tx-row__name">Skin Consultation</h3>
+      <p class="tx-row__desc">A private skin analysis and bespoke roadmap — the considered place to begin your skin journey at Lua's.</p>
+      <div class="tx-row__time">30 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price" style="font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--gold);">Complimentary</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 02</div>
+      <h3 class="tx-row__name">The Glow Facial</h3>
+      <p class="tx-row__desc">A radiance-restoring facial — cleanse, exfoliation, mask layering and lymphatic massage for an immediate, lit-from-within glow.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$130</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 03</div>
+      <h3 class="tx-row__name">Dermaplaning Glow</h3>
+      <p class="tx-row__desc">Precision exfoliation that lifts away vellus hair and dull cells — leaving skin remarkably smooth, brighter and ready to absorb every active that follows.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$165</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 04</div>
+      <h3 class="tx-row__name">Hydra Oxygen Facial</h3>
+      <p class="tx-row__desc">Deep hydration, gentle resurfacing and oxygen infusion — an instant plump, glow and glassy finish, with zero downtime.</p>
+      <div class="tx-row__time">1 hr 15 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$210</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 05</div>
+      <h3 class="tx-row__name">The Ultimate Renewal</h3>
+      <p class="tx-row__desc">Our most complete facial experience — combining advanced exfoliation, active serums, sculpting massage and LED therapy for a full skin reset.</p>
+      <div class="tx-row__time">1 hr 30 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$240</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 2. BIOAGE SKIN PROTOCOLS =============== -->
+<section class="tx-section" id="bioage">
+  <div class="tx-section__head reveal">
+    <div class="tx-section__num">02</div>
+    <div class="tx-section__title-block">
+      <p class="tx-section__cat-name">Bioage Skin Protocols</p>
+      <h2 class="tx-section__title">Targeted, <em>active</em> protocols.</h2>
+      <p class="tx-section__intro">
+        Clinical-grade Bioage protocols — carefully selected to address specific concerns: congestion, pigmentation, dullness and the visible signs of ageing. Best results are seen as a series.
+      </p>
+    </div>
+  </div>
+
+  <div class="tx-list">
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 01</div>
+      <h3 class="tx-row__name">Skin Consultation</h3>
+      <p class="tx-row__desc">A focused skin analysis to determine which Bioage protocol — or series — best suits your concerns and goals.</p>
+      <div class="tx-row__time">30 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price" style="font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--gold);">Complimentary</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 02</div>
+      <h3 class="tx-row__name">Clear Skin Protocol</h3>
+      <p class="tx-row__desc">A purifying protocol for congested, breakout-prone skin — calming, decongesting and rebalancing without stripping.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$155</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 03</div>
+      <h3 class="tx-row__name">Spot Corrector Protocol</h3>
+      <p class="tx-row__desc">Targeted treatment for pigmentation, sun damage and uneven tone — designed to fade dark spots and even the complexion over time.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$165</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 04</div>
+      <h3 class="tx-row__name">Vitamin C Renewal</h3>
+      <p class="tx-row__desc">An antioxidant-rich brightening treatment — restores luminosity, supports collagen and shields the skin against environmental stress.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$160</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 05</div>
+      <h3 class="tx-row__name">Deep Cleanse Ritual</h3>
+      <p class="tx-row__desc">A meticulous double cleanse, steam, decongestion and extractions — for skin that feels truly clean, balanced and refreshed.</p>
+      <div class="tx-row__time">1 hr 30 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$160</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 06</div>
+      <h3 class="tx-row__name">Pro-Aging ExoPeptide</h3>
+      <p class="tx-row__desc">Advanced peptide-based protocol — supports natural collagen, softens fine lines and restores elasticity for a refined, age-graceful complexion.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$175</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="tx-note reveal">
+    Most Bioage protocols are most effective when booked as a series of 4 to 6 sessions. Ask about our personalised treatment plans and series pricing during your consultation.
+  </p>
+</section>
+
+<!-- =============== 3. LASH & BROW =============== -->
+<section class="tx-section" id="lashbrow">
+  <div class="tx-section__head reveal">
+    <div class="tx-section__num">03</div>
+    <div class="tx-section__title-block">
+      <p class="tx-section__cat-name">Lash &amp; Brow</p>
+      <h2 class="tx-section__title">Defined, <em>effortless</em> beauty.</h2>
+      <p class="tx-section__intro">
+        Subtle, low-maintenance treatments designed to enhance your natural features. No extensions, no microblading — only your own lashes and brows, beautifully refined.
+      </p>
+    </div>
+  </div>
+
+  <div class="tx-list">
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 01</div>
+      <h3 class="tx-row__name">Lash Lift</h3>
+      <p class="tx-row__desc">Lifts your natural lashes from the root for an open, awakened gaze — lasting 6 to 8 weeks.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$105</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 02</div>
+      <h3 class="tx-row__name">Lash Lift + Tint</h3>
+      <p class="tx-row__desc">Lifted lashes paired with a custom tint — deeper definition with no need for daily mascara.</p>
+      <div class="tx-row__time">1 hr 15 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$120</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 03</div>
+      <h3 class="tx-row__name">Brow Lamination</h3>
+      <p class="tx-row__desc">Fuller, beautifully sculpted brows — your natural shape, lifted and set for an elegantly defined arch.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$110</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 04</div>
+      <h3 class="tx-row__name">Lash Lift + Brow Lamination</h3>
+      <p class="tx-row__desc">The complete eye-defining duo — lifted lashes and sculpted brows in a single appointment.</p>
+      <div class="tx-row__time">2 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$180</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 05</div>
+      <h3 class="tx-row__name">Brow Wax + Tint</h3>
+      <p class="tx-row__desc">Precision shaping with a custom tint — a clean, polished brow that feels intentionally yours.</p>
+      <div class="tx-row__time">30 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$55</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 06</div>
+      <h3 class="tx-row__name">Lash Tint</h3>
+      <p class="tx-row__desc">A custom-blended tint that deepens and defines your natural lashes — perfect between lash lifts.</p>
+      <div class="tx-row__time">20 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$35</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 4. BODY =============== -->
+<section class="tx-section" id="body">
+  <div class="tx-section__head reveal">
+    <div class="tx-section__num">04</div>
+    <div class="tx-section__title-block">
+      <p class="tx-section__cat-name">Body Treatments</p>
+      <h2 class="tx-section__title">Care <em>beyond</em> the face.</h2>
+      <p class="tx-section__intro">
+        Considered, intimate treatments — performed with the same level of warmth, privacy and detail you'd expect from every facial in the studio.
+      </p>
+    </div>
+  </div>
+
+  <div class="tx-list">
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 01</div>
+      <h3 class="tx-row__name">Intimate Area Brightening</h3>
+      <p class="tx-row__desc">A gentle, professional brightening treatment for sensitive intimate areas — performed in a calm, private setting with absolute care and discretion.</p>
+      <div class="tx-row__time">1 hr</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$145</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 5. ADD-ONS =============== -->
+<section class="tx-section" id="addons">
+  <div class="tx-section__head reveal">
+    <div class="tx-section__num">05</div>
+    <div class="tx-section__title-block">
+      <p class="tx-section__cat-name">Add-Ons &amp; Boosters</p>
+      <h2 class="tx-section__title">Complete your <em>experience</em>.</h2>
+      <p class="tx-section__intro">
+        Targeted enhancements designed to elevate any signature facial or stand alone as a focused booster between full treatments.
+      </p>
+    </div>
+  </div>
+
+  <div class="tx-list">
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 01</div>
+      <h3 class="tx-row__name">LED Light Therapy</h3>
+      <p class="tx-row__desc">A 20-minute LED add-on — calms inflammation, supports collagen and brightens the complexion. Pairs beautifully with any facial.</p>
+      <div class="tx-row__time">20 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$40</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 02</div>
+      <h3 class="tx-row__name">LED Therapy — Standalone</h3>
+      <p class="tx-row__desc">A complete 45-minute LED session — extended exposure for deeper, more cumulative benefits.</p>
+      <div class="tx-row__time">45 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$79</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+
+    <div class="tx-row reveal">
+      <div class="tx-row__index">— 03</div>
+      <h3 class="tx-row__name">Hydro Oxygen Booster</h3>
+      <p class="tx-row__desc">A 20-minute oxygen and hydration booster — instant plumpness, glow and a glassy finish before any event or in between facials.</p>
+      <div class="tx-row__time">20 min</div>
+      <div class="tx-row__price-wrap">
+        <span class="tx-row__price">$50</span>
+        <a href="https://wa.link/5w4hsv" class="tx-row__book">Book →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="tx-cta">
+  <div class="tx-cta__inner reveal">
+    <p class="eyebrow">Reserve</p>
+    <h2 class="tx-cta__title">Not sure where to <em>begin</em>?</h2>
+    <p class="tx-cta__sub">
+      Every skin is different — and so is every plan. Book a complimentary skin consultation, or message Luana directly on WhatsApp to find the right starting point.
+    </p>
+    <div class="tx-cta__ctas">
+      <a href="https://wa.link/5w4hsv" class="btn btn--primary">Message on WhatsApp <span class="btn__arrow">→</span></a>
+      <a href="contact.html" class="btn btn--ghost">Send an Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Lua's <span>Beauty</span></div>
+      <p class="footer__tag">Where beauty meets natural elegance — a North Perth skin and beauty studio, founded with care by Luana.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/luasbeautyclinic" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61572451198546" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://wa.link/5w4hsv" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Treatments</h4>
+      <ul class="footer__list">
+        <li><a href="treatments.html#signature">Signature Skin</a></li>
+        <li><a href="treatments.html#bioage">Bioage Protocols</a></li>
+        <li><a href="treatments.html#lashbrow">Lash &amp; Brow</a></li>
+        <li><a href="treatments.html#body">Body Treatments</a></li>
+        <li><a href="treatments.html#addons">Add-Ons</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Studio</h4>
+      <ul class="footer__list">
+        <li><a href="index.html#founder">About Luana</a></li>
+        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://wa.link/5w4hsv">Book on WhatsApp</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Visit</h4>
+      <p class="footer__contact">
+        <strong>Lua's Beauty</strong>
+        North Perth, WA<br/>
+        By appointment only<br/><br/>
+        <strong>Contact</strong>
+        aestheticsbylua@gmail.com<br/>
+        +61 450 349 025<br/><br/>
+        <strong>Follow</strong>
+        @luasbeautyclinic
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div>© 2026 Lua's Beauty · North Perth, Western Australia</div>
+    <div>Crafted with care</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Active category indicator
+  const cats = document.querySelectorAll('.tx-cat');
+  const sections = document.querySelectorAll('.tx-section[id]');
+  const onScrollCats = () => {
+    const scrollPos = window.scrollY + 200;
+    let activeId = sections[0].id;
+    sections.forEach(s => {
+      if (s.offsetTop <= scrollPos) activeId = s.id;
+    });
+    cats.forEach(c => {
+      c.classList.toggle('active', c.getAttribute('href') === '#' + activeId);
+    });
+  };
+  window.addEventListener('scroll', onScrollCats, { passive: true });
+  onScrollCats();
+</script>
+
+</body>
+</html>
