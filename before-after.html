@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Before &amp; After — Lua's Beauty · North Perth</title>
+<meta name="description" content="Real client results from Lua's Beauty in North Perth — facials, dermaplaning, LED therapy, lash lift and brow lamination. Interactive before-and-after sliders. Results vary." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+  <ul class="nav__menu">
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html" style="color: var(--gold);">Before &amp; After</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now →</a></li>
+  </ul>
+  <div class="nav__drawer-foot">
+    <div><strong>+61 450 349 025</strong><a href="tel:+61450349025">Tap to call</a></div>
+    <div>aestheticsbylua@gmail.com</div>
+  </div>
+</div>
+
+<a class="sticky-book" href="booking.html">Book Your Treatment →</a>
+
+<section class="ba-hero reveal">
+  <div class="ba-hero__inner">
+    <p class="eyebrow">Real Results · Real Skin</p>
+    <h1 class="ba-hero__title">Before &amp; <em>After</em>.</h1>
+    <p class="ba-hero__sub">
+      A quiet study of the work — small, considered shifts in texture, hydration, tone and shape. Move the slider to see the change.
+    </p>
+  </div>
+</section>
+
+<div class="ba-filters reveal">
+  <button class="ba-filter is-active" data-filter="all">All Results</button>
+  <button class="ba-filter" data-filter="glow">Glow &amp; Texture</button>
+  <button class="ba-filter" data-filter="hydration">Hydration</button>
+  <button class="ba-filter" data-filter="dermaplaning">Dermaplaning</button>
+  <button class="ba-filter" data-filter="led">LED Rejuvenation</button>
+  <button class="ba-filter" data-filter="brow">Brow Transformation</button>
+  <button class="ba-filter" data-filter="lash">Lash Lift</button>
+</div>
+
+<section class="ba-placeholder reveal" style="margin-bottom: 60px;">
+  <div class="ba-placeholder__icon">✦</div>
+  <h2 class="ba-placeholder__title">Client results gallery <em style="font-family: var(--serif); font-style: italic; color: var(--gold);">coming soon</em></h2>
+  <p class="ba-placeholder__text">
+    The images below are demo placeholders used to demonstrate the gallery layout. Real client before-and-after photos will be added with explicit, written client consent only. We do not use stock or third-party transformations as our own work.
+  </p>
+</section>
+
+<div class="ba-grid">
+  <!-- Card 1 -->
+  <article class="ba-card reveal" data-category="glow">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=85" alt="Before — Glow facial treatment" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85" alt="After — Glow facial result" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Glow Facial · 3 sessions</div>
+      <h3 class="ba-meta__title">A softer, brighter complexion.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+
+  <!-- Card 2 -->
+  <article class="ba-card reveal reveal-delay-1" data-category="hydration">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=85" alt="Before — Hydration facial" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85" alt="After — Hydration facial" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Hydration Facial · single session</div>
+      <h3 class="ba-meta__title">Plumper, more luminous skin.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+
+  <!-- Card 3 -->
+  <article class="ba-card reveal reveal-delay-2" data-category="dermaplaning">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=900&q=85" alt="Before — Dermaplaning" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&q=85" alt="After — Dermaplaning" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Ultimate Renewal Dermaplaning</div>
+      <h3 class="ba-meta__title">Smoother surface, fresher feel.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+
+  <!-- Card 4 -->
+  <article class="ba-card reveal reveal-delay-3" data-category="led">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=900&q=85" alt="Before — LED therapy" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1612343270580-7d8b4f73ec57?w=900&q=85" alt="After — LED therapy" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Firmness LED Therapy · 4 sessions</div>
+      <h3 class="ba-meta__title">Improved firmness appearance.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+
+  <!-- Card 5 -->
+  <article class="ba-card reveal" data-category="brow">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=900&q=85" alt="Before — Brow lamination" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&q=85" alt="After — Brow lamination" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Brow Lamination &amp; Shape</div>
+      <h3 class="ba-meta__title">Fuller, brushed-up brows.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+
+  <!-- Card 6 -->
+  <article class="ba-card reveal reveal-delay-1" data-category="lash">
+    <div class="ba-slider">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1561153021-95f80e22c2a0?w=900&q=85" alt="Before — Lash lift" />
+      <div class="ba-slider__after-wrap">
+        <img class="ba-slider__img" src="https://images.unsplash.com/photo-1583241800698-9c2e7b9e7c63?w=900&q=85" alt="After — Lash lift" />
+      </div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span>
+      <span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-meta">
+      <div class="ba-meta__tag">Lash Lift &amp; Tint</div>
+      <h3 class="ba-meta__title">Lifted, defined, soft.</h3>
+      <p class="ba-meta__desc">Demonstration placeholder. Replace with authorised client image. Results vary.</p>
+    </div>
+  </article>
+</div>
+
+<div class="ba-disclaimer">
+  <strong style="color: var(--ink);">A note on results.</strong>
+  Lua's Beauty treatments are designed to support the appearance and condition of your skin. Results vary depending on skin type, lifestyle, treatment plan, and aftercare. The before-and-after images on this page that are marked as placeholders are not real client transformations and exist only to demonstrate the layout — they will be replaced with authorised images of real client work as those become available. We do not use other people's results to represent our own. This website does not provide medical advice.
+</div>
+
+<section class="t-cta" style="padding: 140px 56px;">
+  <div class="t-cta__inner reveal">
+    <p class="eyebrow">Begin Your Journey</p>
+    <h2 class="t-cta__title">Ready to see <em>your</em> change?</h2>
+    <p class="t-cta__sub">Start with a complimentary skin consultation. We'll map out a personalised plan based on your skin's needs.</p>
+    <div class="t-cta__ctas">
+      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+      <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Lua's <span>Beauty</span></div>
+      <p class="footer__tag">Where beauty meets natural elegance — a North Perth skin and beauty studio, founded with care by Luana.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/luasbeautyclinic" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61572451198546" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://wa.link/5w4hsv" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Treatments</h4>
+      <ul class="footer__list">
+        <li><a href="treatments.html#signature">Signature Skin</a></li>
+        <li><a href="treatments.html#bioage">Advanced Protocols</a></li>
+        <li><a href="treatments.html#lashbrow">Lash &amp; Brow</a></li>
+        <li><a href="skin-consultation-perth.html">Skin Consultation</a></li>
+        <li><a href="treatments.html">Full Menu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Studio</h4>
+      <ul class="footer__list">
+        <li><a href="about.html">About Lua</a></li>
+        <li><a href="before-after.html">Before &amp; After</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Visit</h4>
+      <p class="footer__contact">
+        <strong>Lua's Beauty</strong>
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald St<br/>
+        North Perth WA 6006<br/><br/>
+        <strong>Contact</strong>
+        aestheticsbylua@gmail.com<br/>
+        +61 450 349 025
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div>© 2026 Lua's Beauty · <a href="privacy.html" style="color: inherit;">Privacy</a> · <a href="terms.html" style="color: inherit;">Terms</a> · <a href="cancellation.html" style="color: inherit;">Cancellation</a></div>
+    <div>Crafted with care</div>
+  </div>
+</footer>
+
+<script>
+/* Before/After slider behaviour */
+function initSlider(slider) {
+  const after = slider.querySelector('.ba-slider__after-wrap');
+  const handle = slider.querySelector('.ba-slider__handle');
+  let dragging = false;
+
+  function setPos(clientX) {
+    const rect = slider.getBoundingClientRect();
+    let x = (clientX - rect.left) / rect.width;
+    x = Math.max(0, Math.min(1, x));
+    after.style.width = `${(1 - x) * 100}%`;
+    handle.style.left = `${x * 100}%`;
+  }
+
+  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', () => { dragging = false; });
+
+  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  slider.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  slider.addEventListener('touchend', () => { dragging = false; });
+
+  // Init at 50%
+  setTimeout(() => {
+    const rect = slider.getBoundingClientRect();
+    setPos(rect.left + rect.width / 2);
+  }, 100);
+}
+document.querySelectorAll('.ba-slider').forEach(initSlider);
+
+/* Filters */
+document.querySelectorAll('.ba-filter').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.ba-filter').forEach(x => x.classList.remove('is-active'));
+    b.classList.add('is-active');
+    const f = b.dataset.filter;
+    document.querySelectorAll('.ba-card').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
+    });
+  });
+});
+
+/* Reveal + nav */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const nav = document.getElementById('nav');
+const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+
+</body>
+</html>

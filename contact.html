@@ -190,13 +190,37 @@
   <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
   <ul class="nav__menu">
     <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="index.html#philosophy">Philosophy</a></li>
-    <li><a href="index.html#founder">About</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="https://wa.link/5w4hsv" class="nav__cta">Book on WhatsApp</a>
-  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
 </nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now &rarr;</a></li>
+  </ul>
+  <div class="nav__drawer-foot">
+    <div><strong>+61 450 349 025</strong><a href="tel:+61450349025">Tap to call</a></div>
+    <div>aestheticsbylua@gmail.com</div>
+    <div>Inside Avani Hair, Lvl 2/331 Fitzgerald St, North Perth</div>
+  </div>
+</div>
+
+<a class="sticky-book" href="booking.html">Book Your Treatment &rarr;</a>
 
 <section class="contact-hero">
   <div class="contact-hero__inner reveal">
@@ -319,18 +343,20 @@
     <div>
       <h4 class="footer__col-title">Studio</h4>
       <ul class="footer__list">
-        <li><a href="index.html#founder">About Luana</a></li>
-        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="about.html">About Lua</a></li>
+        <li><a href="before-after.html">Before &amp; After</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://wa.link/5w4hsv">Book on WhatsApp</a></li>
+        <li><a href="booking.html">Book Now</a></li>
       </ul>
     </div>
     <div>
       <h4 class="footer__col-title">Visit</h4>
       <p class="footer__contact">
         <strong>Lua's Beauty</strong>
-        North Perth, WA<br/>
-        By appointment only<br/><br/>
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald St<br/>
+        North Perth WA 6006<br/><br/>
         <strong>Contact</strong>
         aestheticsbylua@gmail.com<br/>
         +61 450 349 025<br/><br/>
@@ -340,7 +366,7 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <div>© 2026 Lua's Beauty · North Perth, Western Australia</div>
+    <div>© 2026 Lua's Beauty · <a href="privacy.html" style="color: inherit;">Privacy</a> · <a href="terms.html" style="color: inherit;">Terms</a> · <a href="cancellation.html" style="color: inherit;">Cancellation</a></div>
     <div>Crafted with care</div>
   </div>
 </footer>

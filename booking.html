@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a Treatment — Lua's Beauty · North Perth</title>
+<meta name="description" content="Book your facial, dermaplaning, microdermabrasion, LED therapy, lash lift or brow lamination at Lua's Beauty in North Perth. Secure online booking with deposit or full payment." />
+<meta name="theme-color" content="#f5efe7" />
+
+<meta property="og:title" content="Book a Treatment — Lua's Beauty" />
+<meta property="og:description" content="Reserve your appointment at Lua's Beauty, North Perth's boutique skin and beauty studio." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Lua's Beauty",
+  "image": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1200",
+  "telephone": "+61 450 349 025",
+  "email": "aestheticsbylua@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Inside Avani Hair, Level 2/331 Fitzgerald St",
+    "addressLocality": "North Perth",
+    "addressRegion": "WA",
+    "postalCode": "6006",
+    "addressCountry": "AU"
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "18:00"}
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+  <ul class="nav__menu">
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now →</a></li>
+  </ul>
+  <div class="nav__drawer-foot">
+    <div><strong>+61 450 349 025</strong><a href="tel:+61450349025">Tap to call</a></div>
+    <div>aestheticsbylua@gmail.com</div>
+    <div>Inside Avani Hair, Lvl 2/331 Fitzgerald St, North Perth</div>
+  </div>
+</div>
+
+<a class="sticky-book" href="#flow-top">Book Your Treatment →</a>
+
+<section class="booking-flow" id="flow-top">
+  <div class="booking-flow__head reveal">
+    <p class="eyebrow" style="justify-content:center;">Begin Your Treatment</p>
+    <h1 class="booking-flow__title">Book your <em>treatment</em>.</h1>
+    <p class="booking-flow__lead">
+      Choose your treatment, select a time, and secure your appointment online. Personalised care, premium products, North Perth.
+    </p>
+  </div>
+
+  <div class="steps-bar reveal" role="navigation" aria-label="Booking steps">
+    <div class="step-pill is-active" data-step="1"><span class="step-pill__num">01</span>Treatment</div>
+    <div class="step-pill" data-step="2"><span class="step-pill__num">02</span>Date &amp; Time</div>
+    <div class="step-pill" data-step="3"><span class="step-pill__num">03</span>Your Details</div>
+    <div class="step-pill" data-step="4"><span class="step-pill__num">04</span>Review</div>
+    <div class="step-pill" data-step="5"><span class="step-pill__num">05</span>Payment</div>
+    <div class="step-pill" data-step="6"><span class="step-pill__num">06</span>Confirmed</div>
+  </div>
+
+  <!-- STEP 1 — Choose Treatment -->
+  <div class="flow-panel is-active" data-panel="1">
+    <h2 class="flow-panel__title">Choose your <em>treatment</em></h2>
+    <p class="flow-panel__sub">Browse by category. Every treatment is personally performed by Luana. Free skin consultation is a perfect starting point if you're unsure.</p>
+
+    <div class="svc-categories">
+      <button class="svc-chip is-active" data-cat="all">All Treatments</button>
+      <button class="svc-chip" data-cat="consult">Consultation</button>
+      <button class="svc-chip" data-cat="signature">Signature Facials</button>
+      <button class="svc-chip" data-cat="advanced">Advanced Skin</button>
+      <button class="svc-chip" data-cat="lashbrow">Lash &amp; Brow</button>
+    </div>
+
+    <div class="svc-list" id="svc-list">
+      <!-- populated by JS from SERVICES -->
+    </div>
+
+    <div class="flow-actions">
+      <div class="flow-actions__left">Step 1 of 6 · Pick a treatment to continue</div>
+      <div class="flow-actions__buttons">
+        <button class="btn btn--primary" id="to-step-2" disabled style="opacity:.5">Continue <span class="btn__arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 — Date & Time -->
+  <div class="flow-panel" data-panel="2">
+    <h2 class="flow-panel__title">Choose a <em>date</em> and time</h2>
+    <p class="flow-panel__sub">Studio hours: Wednesday – Friday 9am – 8pm · Saturday – Sunday 9am – 6pm · Closed Monday &amp; Tuesday.</p>
+
+    <div class="cal-wrap">
+      <div class="cal">
+        <div class="cal__head">
+          <h3 class="cal__title" id="cal-title">—</h3>
+          <div class="cal__nav">
+            <button id="cal-prev" aria-label="Previous month">‹</button>
+            <button id="cal-next" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="cal__grid" id="cal-grid"></div>
+      </div>
+
+      <div class="times">
+        <h3 class="times__title">Available times</h3>
+        <p class="times__date" id="times-date">Select a date to view times</p>
+        <div class="times__grid" id="times-grid"></div>
+      </div>
+    </div>
+
+    <div class="flow-actions">
+      <div class="flow-actions__buttons">
+        <button class="btn btn--ghost" data-prev>← Back</button>
+      </div>
+      <div class="flow-actions__buttons">
+        <button class="btn btn--primary" id="to-step-3" disabled style="opacity:.5">Continue <span class="btn__arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 — Your Details -->
+  <div class="flow-panel" data-panel="3">
+    <h2 class="flow-panel__title">Your <em>details</em></h2>
+    <p class="flow-panel__sub">Just a few details so we can prepare for your appointment and send confirmation.</p>
+
+    <div class="form-grid">
+      <div class="field"><label for="b-first">First name</label><input id="b-first" type="text" required /></div>
+      <div class="field"><label for="b-last">Last name</label><input id="b-last" type="text" required /></div>
+      <div class="field"><label for="b-email">Email address</label><input id="b-email" type="email" required /></div>
+      <div class="field"><label for="b-phone">Phone</label><input id="b-phone" type="tel" placeholder="+61 4__ ___ ___" required /></div>
+      <div class="field field--full">
+        <label for="b-concerns">Tell us about your skin (optional)</label>
+        <textarea id="b-concerns" rows="3" placeholder="Concerns, sensitivities, recent treatments, products you use…"></textarea>
+      </div>
+      <div class="field field--full">
+        <label for="b-notes">Anything else we should know? (optional)</label>
+        <textarea id="b-notes" rows="2" placeholder="Allergies, pregnancy, medications, special occasion…"></textarea>
+      </div>
+    </div>
+
+    <div class="checks" style="margin-top:32px;">
+      <label class="check">
+        <input type="checkbox" id="b-policy" />
+        <span>I have read and accept the <a href="cancellation.html">Cancellation Policy</a> (24–48 hours notice, late cancellations and no-shows may forfeit the deposit).</span>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="b-terms" />
+        <span>I accept the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</span>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="b-marketing" />
+        <span>Send me occasional studio updates, skin care education and new treatment news. (Optional, unsubscribe anytime.)</span>
+      </label>
+    </div>
+
+    <div class="flow-actions">
+      <div class="flow-actions__buttons"><button class="btn btn--ghost" data-prev>← Back</button></div>
+      <div class="flow-actions__buttons"><button class="btn btn--primary" id="to-step-4">Review booking <span class="btn__arrow">→</span></button></div>
+    </div>
+  </div>
+
+  <!-- STEP 4 — Review -->
+  <div class="flow-panel" data-panel="4">
+    <h2 class="flow-panel__title">Review your <em>booking</em></h2>
+    <p class="flow-panel__sub">A summary of your appointment — please confirm everything is correct before payment.</p>
+
+    <div class="review-card" id="review-card">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="reassure" style="margin-top:0; padding-top: 0; border: 0;">
+      <div class="reassure__item">
+        <div class="reassure__num">— 01</div>
+        <h4 class="reassure__title">Secure payment</h4>
+        <p class="reassure__desc">SSL-encrypted, processed by Stripe.</p>
+      </div>
+      <div class="reassure__item">
+        <div class="reassure__num">— 02</div>
+        <h4 class="reassure__title">Easy reschedule</h4>
+        <p class="reassure__desc">Move your booking up to 48 hours before.</p>
+      </div>
+      <div class="reassure__item">
+        <div class="reassure__num">— 03</div>
+        <h4 class="reassure__title">Personal care</h4>
+        <p class="reassure__desc">Every treatment performed by Luana.</p>
+      </div>
+      <div class="reassure__item">
+        <div class="reassure__num">— 04</div>
+        <h4 class="reassure__title">North Perth</h4>
+        <p class="reassure__desc">Inside Avani Hair, Fitzgerald Street.</p>
+      </div>
+    </div>
+
+    <div class="flow-actions">
+      <div class="flow-actions__buttons"><button class="btn btn--ghost" data-prev>← Edit details</button></div>
+      <div class="flow-actions__buttons"><button class="btn btn--primary" id="to-step-5">Continue to payment <span class="btn__arrow">→</span></button></div>
+    </div>
+  </div>
+
+  <!-- STEP 5 — Payment -->
+  <div class="flow-panel" data-panel="5">
+    <h2 class="flow-panel__title">Secure your <em>appointment</em></h2>
+    <p class="flow-panel__sub">Choose how you'd like to pay. Deposits secure your time slot; the remaining balance is settled in-studio.</p>
+
+    <div class="pay-modes" id="pay-modes">
+      <button class="pay-mode is-active" data-mode="deposit">
+        <div class="pay-mode__head"><h4 class="pay-mode__title">Pay Deposit</h4><span class="pay-mode__badge">Recommended</span></div>
+        <p class="pay-mode__desc"><span id="dep-amount">AUD $40</span> now · balance in-studio. Reduces no-shows, secures your spot.</p>
+      </button>
+      <button class="pay-mode" data-mode="full">
+        <div class="pay-mode__head"><h4 class="pay-mode__title">Pay in Full</h4><span class="pay-mode__badge">Easy</span></div>
+        <p class="pay-mode__desc"><span id="full-amount">AUD $0</span> · settled completely. Nothing to pay on the day.</p>
+      </button>
+      <button class="pay-mode" data-mode="instudio">
+        <div class="pay-mode__head"><h4 class="pay-mode__title">Pay In Studio</h4><span class="pay-mode__badge">For consult</span></div>
+        <p class="pay-mode__desc">No payment now · pay on arrival. Available for the complimentary consultation.</p>
+      </button>
+    </div>
+
+    <div id="pay-card-block">
+      <div class="pay-methods">
+        <span class="pay-pill">Visa</span>
+        <span class="pay-pill">Mastercard</span>
+        <span class="pay-pill">Amex</span>
+        <span class="pay-pill">Apple Pay</span>
+        <span class="pay-pill">Google Pay</span>
+        <span class="pay-pill">Stripe Secured</span>
+      </div>
+
+      <div class="card-form">
+        <div class="field"><label for="c-name">Name on card</label><input id="c-name" type="text" placeholder="Full name as shown on card" /></div>
+        <div class="field"><label for="c-num">Card number</label><input id="c-num" type="text" inputmode="numeric" maxlength="19" placeholder="•••• •••• •••• ••••" /></div>
+        <div class="card-form__row">
+          <div class="field"><label for="c-exp">Expiry (MM/YY)</label><input id="c-exp" type="text" maxlength="5" placeholder="MM/YY" /></div>
+          <div class="field"><label for="c-cvc">CVC</label><input id="c-cvc" type="text" inputmode="numeric" maxlength="4" placeholder="•••" /></div>
+          <div class="field"><label for="c-zip">Postcode</label><input id="c-zip" type="text" maxlength="6" placeholder="6006" /></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 24px; font-size: 12px; color: var(--muted); line-height: 1.7;">
+      This is a design demonstration. In production, payments are processed securely via Stripe — Lua's Beauty does not store your card details. Apple Pay and Google Pay are available on supported devices.
+    </p>
+
+    <div class="flow-actions">
+      <div class="flow-actions__buttons"><button class="btn btn--ghost" data-prev>← Back</button></div>
+      <div class="flow-actions__buttons"><button class="btn btn--primary" id="to-step-6">Confirm booking <span class="btn__arrow">→</span></button></div>
+    </div>
+  </div>
+
+  <!-- STEP 6 — Confirmed -->
+  <div class="flow-panel" data-panel="6">
+    <div class="confirm-card">
+      <div class="confirm-check">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>
+      </div>
+      <h2 class="confirm-title">Your appointment is <em>confirmed</em>.</h2>
+      <p class="confirm-sub">A confirmation email is on its way to your inbox — including preparation notes and a calendar invite.</p>
+
+      <div class="confirm-summary" id="confirm-summary"></div>
+
+      <p style="font-size:13px; color: var(--ink-soft); margin: 0 0 24px; line-height:1.7;">
+        <strong>What's next:</strong> You'll receive a reminder 24 hours and 2 hours before your appointment. Please arrive 5 minutes early to settle in.
+        <br/><br/>
+        <strong>Need to reschedule?</strong> Reply to your confirmation email or message Luana on WhatsApp — we'll move things around as needed up to 48 hours before.
+      </p>
+
+      <div class="confirm-actions">
+        <a href="#" class="btn btn--primary" id="ics-dl">Add to calendar <span class="btn__arrow">↓</span></a>
+        <a href="https://wa.link/5w4hsv" class="btn btn--ghost">Message Luana</a>
+        <a href="index.html" class="btn btn--ghost">Back to home</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reassure">
+    <div class="reassure__item">
+      <div class="reassure__num">— Trust</div>
+      <h4 class="reassure__title">Australian-owned</h4>
+      <p class="reassure__desc">A boutique, North Perth studio with personalised care.</p>
+    </div>
+    <div class="reassure__item">
+      <div class="reassure__num">— Secure</div>
+      <h4 class="reassure__title">SSL &amp; Stripe</h4>
+      <p class="reassure__desc">Bank-level encryption on every transaction.</p>
+    </div>
+    <div class="reassure__item">
+      <div class="reassure__num">— Flexible</div>
+      <h4 class="reassure__title">Reschedule freely</h4>
+      <p class="reassure__desc">Move your appointment up to 48 hours before.</p>
+    </div>
+    <div class="reassure__item">
+      <div class="reassure__num">— Care</div>
+      <h4 class="reassure__title">Personal therapist</h4>
+      <p class="reassure__desc">Every treatment delivered personally by Luana.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Lua's <span>Beauty</span></div>
+      <p class="footer__tag">Where beauty meets natural elegance — a North Perth skin and beauty studio, founded with care by Luana.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/luasbeautyclinic" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61572451198546" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://wa.link/5w4hsv" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Treatments</h4>
+      <ul class="footer__list">
+        <li><a href="treatments.html#signature">Signature Skin</a></li>
+        <li><a href="treatments.html#bioage">Advanced Protocols</a></li>
+        <li><a href="treatments.html#lashbrow">Lash &amp; Brow</a></li>
+        <li><a href="skin-consultation-perth.html">Skin Consultation</a></li>
+        <li><a href="treatments.html">Full Menu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Studio</h4>
+      <ul class="footer__list">
+        <li><a href="about.html">About Lua</a></li>
+        <li><a href="before-after.html">Before &amp; After</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Visit</h4>
+      <p class="footer__contact">
+        <strong>Lua's Beauty</strong>
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald St<br/>
+        North Perth WA 6006<br/><br/>
+        <strong>Contact</strong>
+        aestheticsbylua@gmail.com<br/>
+        +61 450 349 025
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div>© 2026 Lua's Beauty · ABN held in WA · <a href="privacy.html" style="color: inherit;">Privacy</a> · <a href="terms.html" style="color: inherit;">Terms</a> · <a href="cancellation.html" style="color: inherit;">Cancellation</a></div>
+    <div>Crafted with care</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   LUA'S BEAUTY — BOOKING FLOW
+   Front-end demo. In production, calls to Stripe + booking API.
+   ============================================================ */
+
+const SERVICES = [
+  { id:'consult-free', cat:'consult', name:'Complimentary Skin Consultation', desc:'A 30-minute in-studio conversation about your skin goals, concerns and treatment plan. Complimentary, no payment required.', duration:'30 min', price: 0, free: true },
+  { id:'glow-facial', cat:'signature', name:'The Glow Facial', desc:'Cleanse, exfoliation, mask layering and lymphatic massage for an immediate, lit-from-within glow.', duration:'1 hr', price: 130 },
+  { id:'hydration-facial', cat:'signature', name:'Hydration Facial', desc:'A nourishing facial designed to restore hydration and refresh the skin surface. Ideal for dry, tired or dehydrated skin.', duration:'1 hr', price: 145 },
+  { id:'custom-facial', cat:'signature', name:'Custom Facial', desc:'A facial tailored to your skin on the day — every product and step chosen specifically for you.', duration:'1 hr 15 min', price: 165 },
+  { id:'relaxation-facial', cat:'signature', name:'Relaxation Facial', desc:'A soothing, sensorial facial designed to calm the nervous system as much as the skin.', duration:'1 hr', price: 135 },
+  { id:'dermaplaning', cat:'advanced', name:'Ultimate Renewal Dermaplaning', desc:'Refined exfoliating treatment to remove dead skin cells and facial fuzz, leaving skin smoother, brighter and more receptive to skincare. Can be paired with LED therapy.', duration:'1 hr 15 min', price: 175 },
+  { id:'microdermabrasion', cat:'advanced', name:'Intense Hydration Microdermabrasion', desc:'A deeply nourishing facial to restore hydration, refresh the skin surface and support a healthy, luminous glow. Ideal for dull or dehydrated skin.', duration:'1 hr 15 min', price: 195 },
+  { id:'led-therapy', cat:'advanced', name:'Firmness &amp; Rejuvenation LED Therapy', desc:'A non-invasive LED treatment using red light to support collagen and elastin stimulation, helping improve the appearance of firmness.', duration:'45 min', price: 95 },
+  { id:'ultimate-renewal', cat:'advanced', name:'The Ultimate Renewal', desc:'Our most complete facial — advanced exfoliation, active serums, sculpting massage and LED therapy for a full skin reset.', duration:'1 hr 30 min', price: 240 },
+  { id:'lash-lift', cat:'lashbrow', name:'Lash Lift &amp; Tint', desc:'A semi-permanent curl that lifts and defines your natural lashes, paired with a soft tint for visible polish.', duration:'1 hr', price: 95 },
+  { id:'brow-lamination', cat:'lashbrow', name:'Brow Lamination &amp; Shape', desc:'Soft, brushed-up brows with a tailored shape and tint — full, natural, considered.', duration:'45 min', price: 89 },
+];
+
+const HOURS = {
+  // 0=Sun, 1=Mon, … 6=Sat
+  0: { open:'09:00', close:'18:00' },
+  1: null, 2: null,
+  3: { open:'09:00', close:'20:00' },
+  4: { open:'09:00', close:'20:00' },
+  5: { open:'09:00', close:'20:00' },
+  6: { open:'09:00', close:'18:00' },
+};
+
+const state = {
+  step: 1,
+  service: null,
+  date: null,
+  time: null,
+  details: {},
+  payMode: 'deposit',
+  payAmount: 0,
+};
+
+/* -------- STEP 1: Services -------- */
+function renderServices(cat = 'all') {
+  const list = document.getElementById('svc-list');
+  const items = SERVICES.filter(s => cat === 'all' || s.cat === cat);
+  list.innerHTML = items.map(s => `
+    <div class="svc-row ${state.service?.id === s.id ? 'is-selected' : ''}" data-id="${s.id}">
+      <div>
+        <h3 class="svc-row__name">${s.name}</h3>
+        <p class="svc-row__desc">${s.desc}</p>
+      </div>
+      <span class="svc-row__time">${s.duration}</span>
+      <span class="svc-row__price">${s.free ? 'Free' : `<em>$</em>${s.price}`}</span>
+    </div>
+  `).join('');
+  list.querySelectorAll('.svc-row').forEach(row => {
+    row.addEventListener('click', () => {
+      state.service = SERVICES.find(s => s.id === row.dataset.id);
+      list.querySelectorAll('.svc-row').forEach(r => r.classList.remove('is-selected'));
+      row.classList.add('is-selected');
+      const btn = document.getElementById('to-step-2');
+      btn.disabled = false; btn.style.opacity = '1';
+    });
+  });
+}
+
+document.querySelectorAll('.svc-chip').forEach(c => {
+  c.addEventListener('click', () => {
+    document.querySelectorAll('.svc-chip').forEach(x => x.classList.remove('is-active'));
+    c.classList.add('is-active');
+    renderServices(c.dataset.cat);
+  });
+});
+
+renderServices();
+
+/* -------- STEP 2: Calendar -------- */
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+let calYear = TODAY.getFullYear(), calMonth = TODAY.getMonth();
+
+function renderCalendar() {
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-title').textContent = `${monthNames[calMonth]} ${calYear}`;
+  const grid = document.getElementById('cal-grid');
+  const dows = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  let html = dows.map(d => `<div class="cal__dow">${d}</div>`).join('');
+  const first = new Date(calYear, calMonth, 1);
+  const startDow = first.getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  for (let i = 0; i < startDow; i++) html += `<div></div>`;
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(calYear, calMonth, d);
+    const past = date < TODAY;
+    const closed = HOURS[date.getDay()] === null;
+    const disabled = past || closed;
+    const selected = state.date && state.date.toDateString() === date.toDateString();
+    const today = date.toDateString() === TODAY.toDateString();
+    html += `<button class="cal__day ${selected ? 'is-selected' : ''} ${today ? 'is-today' : ''} ${closed && !past ? 'cal__day--unavail' : ''}" ${disabled ? 'disabled' : ''} data-d="${d}">${d}</button>`;
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll('.cal__day:not(:disabled)').forEach(b => {
+    b.addEventListener('click', () => {
+      state.date = new Date(calYear, calMonth, parseInt(b.dataset.d, 10));
+      state.time = null;
+      renderCalendar();
+      renderTimes();
+      const next = document.getElementById('to-step-3');
+      next.disabled = true; next.style.opacity = '.5';
+    });
+  });
+}
+
+function renderTimes() {
+  const grid = document.getElementById('times-grid');
+  const label = document.getElementById('times-date');
+  if (!state.date) { grid.innerHTML = ''; label.textContent = 'Select a date to view times'; return; }
+  const hours = HOURS[state.date.getDay()];
+  if (!hours) { grid.innerHTML = ''; label.textContent = 'Studio closed on this day.'; return; }
+  const opts = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  label.textContent = `${opts[state.date.getDay()]} · ${state.date.getDate()} ${state.date.toLocaleString('en-AU',{month:'long'})}`;
+  const [oH] = hours.open.split(':').map(Number);
+  const [cH] = hours.close.split(':').map(Number);
+  let times = [];
+  for (let h = oH; h < cH; h++) {
+    times.push(`${String(h).padStart(2,'0')}:00`);
+    if (h !== cH - 1) times.push(`${String(h).padStart(2,'0')}:30`);
+  }
+  // randomly mark some as unavailable for realism
+  const unavail = new Set();
+  const seed = state.date.getDate() + state.date.getMonth() * 31;
+  for (let i = 0; i < 3; i++) unavail.add(times[(seed * (i + 1) * 7) % times.length]);
+  grid.innerHTML = times.map(t => `
+    <button class="time-slot ${state.time === t ? 'is-selected' : ''}" ${unavail.has(t) ? 'disabled' : ''} data-t="${t}">${t}</button>
+  `).join('');
+  grid.querySelectorAll('.time-slot:not(:disabled)').forEach(b => {
+    b.addEventListener('click', () => {
+      state.time = b.dataset.t;
+      grid.querySelectorAll('.time-slot').forEach(x => x.classList.remove('is-selected'));
+      b.classList.add('is-selected');
+      const next = document.getElementById('to-step-3');
+      next.disabled = false; next.style.opacity = '1';
+    });
+  });
+}
+
+document.getElementById('cal-prev').addEventListener('click', () => {
+  if (calYear === TODAY.getFullYear() && calMonth === TODAY.getMonth()) return;
+  calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar();
+});
+document.getElementById('cal-next').addEventListener('click', () => {
+  calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; }
+  renderCalendar();
+});
+renderCalendar();
+renderTimes();
+
+/* -------- STEP NAVIGATION -------- */
+function goToStep(n) {
+  state.step = n;
+  document.querySelectorAll('.flow-panel').forEach(p => p.classList.toggle('is-active', parseInt(p.dataset.panel) === n));
+  document.querySelectorAll('.step-pill').forEach(p => {
+    const num = parseInt(p.dataset.step);
+    p.classList.toggle('is-active', num === n);
+    p.classList.toggle('is-done', num < n);
+  });
+  window.scrollTo({ top: document.getElementById('flow-top').offsetTop - 20, behavior: 'smooth' });
+}
+
+document.querySelectorAll('[data-prev]').forEach(b => b.addEventListener('click', () => goToStep(state.step - 1)));
+
+document.getElementById('to-step-2').addEventListener('click', () => { if (state.service) goToStep(2); });
+document.getElementById('to-step-3').addEventListener('click', () => { if (state.date && state.time) goToStep(3); });
+document.getElementById('to-step-4').addEventListener('click', () => {
+  // capture details
+  const first = document.getElementById('b-first').value.trim();
+  const last = document.getElementById('b-last').value.trim();
+  const email = document.getElementById('b-email').value.trim();
+  const phone = document.getElementById('b-phone').value.trim();
+  const policy = document.getElementById('b-policy').checked;
+  const terms = document.getElementById('b-terms').checked;
+  if (!first || !last || !email || !phone) { alert('Please complete your name, email and phone.'); return; }
+  if (!policy || !terms) { alert('Please accept the cancellation policy and terms.'); return; }
+  state.details = { first, last, email, phone,
+    concerns: document.getElementById('b-concerns').value,
+    notes: document.getElementById('b-notes').value };
+  renderReview();
+  goToStep(4);
+});
+document.getElementById('to-step-5').addEventListener('click', () => { configurePayment(); goToStep(5); });
+document.getElementById('to-step-6').addEventListener('click', () => {
+  if (state.payMode !== 'instudio' && state.service.price > 0) {
+    const num = document.getElementById('c-num').value.replace(/\s/g,'');
+    const exp = document.getElementById('c-exp').value;
+    const cvc = document.getElementById('c-cvc').value;
+    if (num.length < 12 || !exp.includes('/') || cvc.length < 3) {
+      alert('Please enter valid card details, or choose Pay In Studio.');
+      return;
+    }
+  }
+  renderConfirmation();
+  goToStep(6);
+});
+
+/* -------- REVIEW -------- */
+function renderReview() {
+  const s = state.service;
+  const fmt = state.date.toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  const total = s.free ? 0 : s.price;
+  document.getElementById('review-card').innerHTML = `
+    <div class="review-row"><span class="review-row__label">Treatment</span><span class="review-row__val">${s.name}</span></div>
+    <div class="review-row"><span class="review-row__label">Duration</span><span class="review-row__val">${s.duration}</span></div>
+    <div class="review-row"><span class="review-row__label">Date</span><span class="review-row__val">${fmt}</span></div>
+    <div class="review-row"><span class="review-row__label">Time</span><span class="review-row__val">${state.time}</span></div>
+    <div class="review-row"><span class="review-row__label">Therapist</span><span class="review-row__val">Luana · Founder</span></div>
+    <div class="review-row"><span class="review-row__label">Location</span><span class="review-row__val">Inside Avani Hair, North Perth</span></div>
+    <div class="review-row"><span class="review-row__label">Client</span><span class="review-row__val">${state.details.first} ${state.details.last}</span></div>
+    <div class="review-row review-row--total"><span class="review-row__label">Total</span><span class="review-row__val">${total === 0 ? 'Free' : `$${total}`}</span></div>
+  `;
+}
+
+/* -------- PAYMENT -------- */
+function configurePayment() {
+  const s = state.service;
+  const isFree = s.free || s.price === 0;
+  const deposit = Math.max(30, Math.round(s.price * 0.3 / 5) * 5);
+  document.getElementById('dep-amount').textContent = isFree ? 'No payment' : `AUD $${deposit}`;
+  document.getElementById('full-amount').textContent = isFree ? 'No payment' : `AUD $${s.price}`;
+  state.payAmount = isFree ? 0 : deposit;
+  // free → force in-studio
+  if (isFree) {
+    selectPayMode('instudio');
+    document.querySelectorAll('.pay-mode').forEach(m => { if (m.dataset.mode !== 'instudio') m.style.display = 'none'; });
+    document.getElementById('pay-card-block').style.display = 'none';
+  } else {
+    document.querySelectorAll('.pay-mode').forEach(m => m.style.display = '');
+    selectPayMode('deposit');
+  }
+}
+
+function selectPayMode(mode) {
+  state.payMode = mode;
+  document.querySelectorAll('.pay-mode').forEach(m => m.classList.toggle('is-active', m.dataset.mode === mode));
+  const card = document.getElementById('pay-card-block');
+  card.style.display = mode === 'instudio' ? 'none' : '';
+  const s = state.service;
+  if (mode === 'deposit') state.payAmount = Math.max(30, Math.round(s.price * 0.3 / 5) * 5);
+  if (mode === 'full') state.payAmount = s.price;
+  if (mode === 'instudio') state.payAmount = 0;
+}
+
+document.querySelectorAll('.pay-mode').forEach(m => {
+  m.addEventListener('click', () => selectPayMode(m.dataset.mode));
+});
+
+// Card formatting niceties
+document.getElementById('c-num').addEventListener('input', (e) => {
+  let v = e.target.value.replace(/\D/g,'').slice(0,16);
+  e.target.value = v.replace(/(.{4})/g,'$1 ').trim();
+});
+document.getElementById('c-exp').addEventListener('input', (e) => {
+  let v = e.target.value.replace(/\D/g,'').slice(0,4);
+  if (v.length > 2) v = v.slice(0,2) + '/' + v.slice(2);
+  e.target.value = v;
+});
+
+/* -------- CONFIRMATION -------- */
+function renderConfirmation() {
+  const s = state.service;
+  const fmt = state.date.toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  const paidLabel = state.payMode === 'instudio' ? 'Pay in studio on arrival'
+                  : state.payMode === 'full' ? `Paid in full · AUD $${state.payAmount}`
+                  : `Deposit paid · AUD $${state.payAmount} (balance AUD $${s.price - state.payAmount} on the day)`;
+  document.getElementById('confirm-summary').innerHTML = `
+    <div class="review-row"><span class="review-row__label">Treatment</span><span class="review-row__val">${s.name}</span></div>
+    <div class="review-row"><span class="review-row__label">When</span><span class="review-row__val">${fmt} · ${state.time}</span></div>
+    <div class="review-row"><span class="review-row__label">Where</span><span class="review-row__val">Inside Avani Hair, Lvl 2/331 Fitzgerald St, North Perth</span></div>
+    <div class="review-row"><span class="review-row__label">Payment</span><span class="review-row__val">${paidLabel}</span></div>
+  `;
+
+  // ICS download
+  const start = new Date(state.date);
+  const [h, m] = state.time.split(':').map(Number);
+  start.setHours(h, m, 0, 0);
+  const end = new Date(start); end.setHours(end.getHours() + 1);
+  const fmtIcs = d => d.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+  const ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Lua\'s Beauty//EN',
+    'BEGIN:VEVENT',
+    `UID:${Date.now()}@luasbeauty.com`,
+    `DTSTAMP:${fmtIcs(new Date())}`,
+    `DTSTART:${fmtIcs(start)}`,
+    `DTEND:${fmtIcs(end)}`,
+    `SUMMARY:Lua's Beauty — ${s.name}`,
+    'LOCATION:Inside Avani Hair, Level 2/331 Fitzgerald St, North Perth WA 6006',
+    `DESCRIPTION:Your ${s.name} appointment with Luana. Please arrive 5 minutes early.`,
+    'END:VEVENT', 'END:VCALENDAR'
+  ].join('\r\n');
+  const blob = new Blob([ics], { type:'text/calendar' });
+  document.getElementById('ics-dl').href = URL.createObjectURL(blob);
+  document.getElementById('ics-dl').setAttribute('download', 'luas-beauty-appointment.ics');
+}
+
+/* -------- REVEAL & NAV -------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const nav = document.getElementById('nav');
+const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+
+</body>
+</html>

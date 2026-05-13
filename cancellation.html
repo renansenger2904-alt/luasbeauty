@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cancellation Policy — Lua's Beauty</title>
+<meta name="description" content="Lua's Beauty cancellation and rescheduling policy — what to expect when life happens and you need to change your appointment." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+  <ul class="nav__menu">
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now →</a></li>
+  </ul>
+</div>
+
+<section class="legal-page reveal">
+  <p class="eyebrow">Legal</p>
+  <h1>Cancellation <em>Policy</em></h1>
+  <p class="legal-page__date">Last updated: 13 May 2026</p>
+
+  <p>We understand life happens. Our cancellation policy is designed to be fair to you, fair to other clients on the waitlist, and respectful of the time Luana sets aside specifically for your appointment.</p>
+
+  <h2>1. The short version</h2>
+  <ul>
+    <li><strong>48 hours' notice or more:</strong> Free reschedule or cancellation. Deposit fully refunded or transferred to your new booking.</li>
+    <li><strong>Less than 48 hours' notice:</strong> Deposit forfeited. A new deposit will be required to rebook.</li>
+    <li><strong>No-shows:</strong> Full deposit forfeited. We may require full prepayment for any future bookings.</li>
+  </ul>
+
+  <h2>2. How to reschedule or cancel</h2>
+  <p>The fastest way is to reply to your confirmation email or message Luana directly on WhatsApp at <strong>+61 450 349 025</strong>. You can also email <strong>aestheticsbylua@gmail.com</strong>. We'll move things around as quickly as we can.</p>
+
+  <h2>3. Late arrivals</h2>
+  <p>We hold appointments for up to 10 minutes after the scheduled start time. After that, your treatment may be shortened to respect the next client's booking — the full treatment price still applies. Please send a quick message if you're running late so we can plan accordingly.</p>
+
+  <h2>4. Studio cancellations</h2>
+  <p>In the rare case we need to cancel or reschedule your appointment (illness, emergency, studio circumstance), you'll be offered the soonest available reschedule or a full refund of your deposit, whichever you prefer.</p>
+
+  <h2>5. Group bookings &amp; special occasions</h2>
+  <p>For multi-treatment bookings, bridal parties or group sessions, a larger deposit may be required and 7 days' notice is preferred for any changes. We'll communicate this clearly at the time of booking.</p>
+
+  <h2>6. Why this policy exists</h2>
+  <p>As a boutique single-therapist studio, every appointment represents time that Luana has set aside personally for you. Late cancellations and no-shows mean another client could not have your spot, and the time cannot be recovered. Thank you for understanding — and for respecting Luana's time.</p>
+
+  <h2>7. Exceptional circumstances</h2>
+  <p>Genuine emergencies and unexpected illness are handled with care. Please get in touch and we'll work something out — we are reasonable humans.</p>
+
+  <h2>8. Refund processing</h2>
+  <p>Refunds (when applicable) are processed via the original payment method within 5–10 business days. Stripe processing times vary slightly between banks.</p>
+
+  <h2>9. Australian Consumer Law</h2>
+  <p>Nothing in this policy limits your statutory rights under the Australian Consumer Law.</p>
+
+  <h2>Questions?</h2>
+  <p>Email <strong>aestheticsbylua@gmail.com</strong> or message Luana on WhatsApp.</p>
+
+  <div style="margin-top: 60px; display: flex; gap: 12px; flex-wrap: wrap;">
+    <a href="booking.html" class="btn btn--primary">Book a Treatment <span class="btn__arrow">→</span></a>
+    <a href="contact.html" class="btn btn--ghost">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Lua's <span>Beauty</span></div>
+      <p class="footer__tag">Where beauty meets natural elegance — a North Perth skin and beauty studio.</p>
+    </div>
+    <div><h4 class="footer__col-title">Studio</h4>
+      <ul class="footer__list"><li><a href="about.html">About Lua</a></li><li><a href="treatments.html">Treatments</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div><h4 class="footer__col-title">Legal</h4>
+      <ul class="footer__list"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="cancellation.html">Cancellation Policy</a></li></ul>
+    </div>
+    <div><h4 class="footer__col-title">Visit</h4>
+      <p class="footer__contact"><strong>Lua's Beauty</strong>Inside Avani Hair<br/>Level 2 / 331 Fitzgerald St<br/>North Perth WA 6006<br/><br/>aestheticsbylua@gmail.com<br/>+61 450 349 025</p>
+    </div>
+  </div>
+  <div class="footer__bottom"><div>© 2026 Lua's Beauty</div><div>Crafted with care</div></div>
+</footer>
+<script>
+const io = new IntersectionObserver((e) => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+</script>
+</body></html>
