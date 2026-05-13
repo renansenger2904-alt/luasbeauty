@@ -407,14 +407,37 @@
   <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
   <ul class="nav__menu">
     <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="#philosophy">Philosophy</a></li>
-    <li><a href="#founder">About</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="https://wa.link/5w4hsv" class="nav__cta">Book on WhatsApp</a>
-  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
 </nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now →</a></li>
+  </ul>
+  <div class="nav__drawer-foot">
+    <div><strong>+61 450 349 025</strong><a href="tel:+61450349025">Tap to call</a></div>
+    <div>aestheticsbylua@gmail.com</div>
+    <div>Inside Avani Hair, Lvl 2/331 Fitzgerald St, North Perth</div>
+  </div>
+</div>
+
+<a class="sticky-book" href="booking.html">Book Your Treatment →</a>
 
 <header class="hero reveal" id="hero">
   <div class="hero__eyebrow">Skin &amp; Beauty Studio · North Perth</div>
@@ -428,8 +451,8 @@
       A North Perth skin and beauty studio founded by Luana — a Brazilian beauty professional who believes every treatment should leave you feeling radiant, confident, and naturally beautiful.
     </p>
     <div class="hero__ctas">
-      <a href="https://wa.link/5w4hsv" class="btn btn--primary">Book on WhatsApp <span class="btn__arrow">→</span></a>
-      <a href="treatments.html" class="btn btn--ghost">View Treatment Menu</a>
+      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+      <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
     </div>
   </div>
   <div class="hero__visual">
@@ -583,7 +606,7 @@
         <li>Lymphatic facial massage</li>
         <li>LED light therapy finish</li>
       </ul>
-      <a href="https://wa.link/5w4hsv" class="btn btn--primary">Reserve a session <span class="btn__arrow">→</span></a>
+      <a href="booking.html" class="btn btn--primary">Reserve a session <span class="btn__arrow">→</span></a>
     </div>
     <div class="featured__visual reveal reveal-delay-1">
       <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=85" alt="Ultimate Renewal facial treatment" />
@@ -636,6 +659,90 @@
       <div class="cat__count">3 boosters · from $40</div>
       <span class="cat__link">Explore →</span>
     </a>
+  </div>
+</section>
+
+<section class="concerns" id="concerns">
+  <div class="section__header reveal">
+    <div>
+      <p class="eyebrow">Tell Us What Your Skin Needs</p>
+      <h2 class="section__title">Skin <em>concerns</em>,<br/>met thoughtfully.</h2>
+    </div>
+    <p class="section__intro">
+      Choose what your skin is telling you — we'll recommend the right starting point. Every concern is met with a personalised plan, not a template.
+    </p>
+  </div>
+  <div class="concerns__grid">
+    <a href="booking.html" class="concern reveal"><div class="concern__num">— 01</div><h3 class="concern__name">Dullness</h3><div class="concern__solve">Glow Facial · Dermaplaning</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-1"><div class="concern__num">— 02</div><h3 class="concern__name">Dryness</h3><div class="concern__solve">Hydration Facial · Microdermabrasion</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-2"><div class="concern__num">— 03</div><h3 class="concern__name">Congestion</h3><div class="concern__solve">Custom Facial · Consultation</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-3"><div class="concern__num">— 04</div><h3 class="concern__name">Fine lines</h3><div class="concern__solve">LED Therapy · Ultimate Renewal</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-4"><div class="concern__num">— 05</div><h3 class="concern__name">Texture</h3><div class="concern__solve">Dermaplaning · Custom Facial</div></a>
+    <a href="booking.html" class="concern reveal"><div class="concern__num">— 06</div><h3 class="concern__name">Pigmentation</h3><div class="concern__solve">Bioage Protocol · Consultation</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-1"><div class="concern__num">— 07</div><h3 class="concern__name">Sensitivity</h3><div class="concern__solve">Relaxation Facial · LED</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-2"><div class="concern__num">— 08</div><h3 class="concern__name">Lack of firmness</h3><div class="concern__solve">LED Therapy · Ultimate Renewal</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-3"><div class="concern__num">— 09</div><h3 class="concern__name">Acne-prone</h3><div class="concern__solve">Custom Facial · Consultation</div></a>
+    <a href="booking.html" class="concern reveal reveal-delay-4"><div class="concern__num">— 10</div><h3 class="concern__name">Uneven tone</h3><div class="concern__solve">Microdermabrasion · LED</div></a>
+  </div>
+  <div style="text-align: center; margin-top: 56px;">
+    <a href="booking.html" class="btn btn--ghost">Book Free Skin Consultation <span class="btn__arrow">→</span></a>
+  </div>
+</section>
+
+<section class="video-block" id="experience-video">
+  <div class="video-block__inner">
+    <div class="video-block__text reveal">
+      <p class="eyebrow">In The Studio</p>
+      <h2 class="video-block__title">A treatment that feels <em>considered</em>.</h2>
+      <p class="video-block__desc">
+        Experience a calm, personalised treatment designed around your skin — slow facial massage, gentle resurfacing, warm towels, the soft glow of LED. Every detail considered.
+      </p>
+      <div class="video-block__chips">
+        <span>Slow Massage</span><span>Product Layering</span><span>LED Therapy</span><span>Treatment Ambience</span><span>Skin Consultation</span>
+      </div>
+    </div>
+    <div class="video-block__stage reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=85" alt="Treatment moment at Lua's Beauty" />
+      <div class="video-block__play"><div class="video-block__play-btn"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg);">
+  <div class="section__header reveal">
+    <div>
+      <p class="eyebrow">Real Results</p>
+      <h2 class="section__title">Before &amp; <em>after</em>.</h2>
+    </div>
+    <p class="section__intro">
+      A small study of the work — small, considered shifts in texture, hydration, tone and shape. Results vary depending on skin type, treatment plan, lifestyle and aftercare.
+    </p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px;" class="ba-teaser">
+    <div class="ba-slider reveal" style="border-radius: 4px;">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=85" alt="Before" />
+      <div class="ba-slider__after-wrap"><img class="ba-slider__img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=85" alt="After" /></div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span><span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-slider reveal reveal-delay-1" style="border-radius: 4px;">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=85" alt="Before" />
+      <div class="ba-slider__after-wrap"><img class="ba-slider__img" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=85" alt="After" /></div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span><span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+    <div class="ba-slider reveal reveal-delay-2" style="border-radius: 4px;">
+      <img class="ba-slider__img" src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=800&q=85" alt="Before" />
+      <div class="ba-slider__after-wrap"><img class="ba-slider__img" src="https://images.unsplash.com/photo-1612343270580-7d8b4f73ec57?w=800&q=85" alt="After" /></div>
+      <div class="ba-slider__handle"><div class="ba-slider__knob">‹›</div></div>
+      <span class="ba-slider__label ba-slider__label--before">Before</span><span class="ba-slider__label ba-slider__label--after">After</span>
+    </div>
+  </div>
+  <p style="text-align:center; font-size: 12px; color: var(--muted); max-width: 760px; margin: 0 auto 32px; line-height: 1.7;">
+    Demonstration placeholders. Real client images will be added with explicit written consent only. Lua's Beauty does not use other people's results to represent our work. Results vary depending on skin type, lifestyle, treatment plan and aftercare.
+  </p>
+  <div style="text-align: center;">
+    <a href="before-after.html" class="btn btn--ghost">View Full Gallery <span class="btn__arrow">→</span></a>
   </div>
 </section>
 
@@ -767,16 +874,50 @@
   </div>
 </section>
 
+<section class="location-sec" id="location">
+  <div class="location-grid">
+    <div class="location-info reveal">
+      <p class="eyebrow">Visit Us</p>
+      <h2 class="location-info__title">In <em>North Perth</em>, by appointment.</h2>
+      <p class="location-info__addr">
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald Street<br/>
+        North Perth WA 6006
+      </p>
+      <div class="location-info__hours">
+        <h4>Opening Hours</h4>
+        <ul class="location-info__hours-list">
+          <li class="closed"><span>Monday</span><span>Closed</span></li>
+          <li class="closed"><span>Tuesday</span><span>Closed</span></li>
+          <li><span>Wednesday</span><span>9am – 8pm</span></li>
+          <li><span>Thursday</span><span>9am – 8pm</span></li>
+          <li><span>Friday</span><span>9am – 8pm</span></li>
+          <li><span>Saturday</span><span>9am – 6pm</span></li>
+          <li><span>Sunday</span><span>9am – 6pm</span></li>
+        </ul>
+      </div>
+      <div class="location-info__ctas">
+        <a href="booking.html" class="btn btn--primary">Book Appointment <span class="btn__arrow">→</span></a>
+        <a href="https://maps.google.com/?q=331+Fitzgerald+St+North+Perth+WA+6006" class="btn btn--ghost">Get Directions</a>
+        <a href="tel:+61450349025" class="btn btn--ghost">Call Now</a>
+      </div>
+    </div>
+    <div class="location-map reveal reveal-delay-1">
+      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=331%20Fitzgerald%20St%20North%20Perth%20WA%206006&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Lua's Beauty location map"></iframe>
+    </div>
+  </div>
+</section>
+
 <section class="booking" id="booking">
   <div class="booking__inner reveal">
     <p class="eyebrow">Begin</p>
-    <h1 class="booking__title">Reserve your <em>moment</em>.</h1>
+    <h2 class="booking__title">Not sure which <em>facial</em> is right for you?</h2>
     <p class="booking__sub">
-      Whether you're starting a new skin journey or simply gifting yourself an hour of stillness — message Luana directly on WhatsApp to book your appointment.
+      Start with a complimentary skin consultation and receive a personalised recommendation based on your skin concerns. No pressure, no obligation.
     </p>
     <div class="booking__ctas">
-      <a href="https://wa.link/5w4hsv" class="btn btn--primary">Book on WhatsApp <span class="btn__arrow">→</span></a>
-      <a href="contact.html" class="btn btn--ghost">Send an Enquiry</a>
+      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+      <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
     </div>
   </div>
 </section>
@@ -805,28 +946,28 @@
     <div>
       <h4 class="footer__col-title">Studio</h4>
       <ul class="footer__list">
-        <li><a href="#founder">About Luana</a></li>
-        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="about.html">About Lua</a></li>
+        <li><a href="before-after.html">Before &amp; After</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://wa.link/5w4hsv">Book on WhatsApp</a></li>
+        <li><a href="booking.html">Book Now</a></li>
       </ul>
     </div>
     <div>
       <h4 class="footer__col-title">Visit</h4>
       <p class="footer__contact">
         <strong>Lua's Beauty</strong>
-        North Perth, WA<br/>
-        By appointment only<br/><br/>
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald St<br/>
+        North Perth WA 6006<br/><br/>
         <strong>Contact</strong>
         aestheticsbylua@gmail.com<br/>
-        +61 450 349 025<br/><br/>
-        <strong>Follow</strong>
-        @luasbeautyclinic
+        +61 450 349 025
       </p>
     </div>
   </div>
   <div class="footer__bottom">
-    <div>© 2026 Lua's Beauty · North Perth, Western Australia</div>
+    <div>© 2026 Lua's Beauty · <a href="privacy.html" style="color: inherit;">Privacy</a> · <a href="terms.html" style="color: inherit;">Terms</a> · <a href="cancellation.html" style="color: inherit;">Cancellation</a></div>
     <div>Crafted with care</div>
   </div>
 </footer>
@@ -846,6 +987,29 @@
   const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  /* Before/After teaser sliders */
+  function initSlider(slider) {
+    const after = slider.querySelector('.ba-slider__after-wrap');
+    const handle = slider.querySelector('.ba-slider__handle');
+    if (!after || !handle) return;
+    let dragging = false;
+    function setPos(clientX) {
+      const rect = slider.getBoundingClientRect();
+      let x = (clientX - rect.left) / rect.width;
+      x = Math.max(0, Math.min(1, x));
+      after.style.width = `${(1 - x) * 100}%`;
+      handle.style.left = `${x * 100}%`;
+    }
+    slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    slider.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    slider.addEventListener('touchend', () => { dragging = false; });
+    setTimeout(() => { const r = slider.getBoundingClientRect(); setPos(r.left + r.width / 2); }, 200);
+  }
+  document.querySelectorAll('.ba-slider').forEach(initSlider);
 </script>
 
 </body>

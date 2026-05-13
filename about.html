@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Lua — Founder of Lua's Beauty, North Perth</title>
+<meta name="description" content="Meet Luana — founder of Lua's Beauty, a boutique skin and beauty studio in North Perth. Six years' Brazilian beauty training, personalised facial and aesthetic care." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+  <ul class="nav__menu">
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html" style="color: var(--gold);">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <button class="nav__toggle" aria-label="Menu" onclick="document.getElementById('drawer').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav__drawer" id="drawer">
+  <div class="nav__drawer-head">
+    <a href="index.html" class="nav__brand">Lua's<span>·</span>Beauty</a>
+    <button class="nav__drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+  </div>
+  <ul class="nav__drawer-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="before-after.html">Before &amp; After</a></li>
+    <li><a href="about.html">About Lua</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--gold);">Book Now →</a></li>
+  </ul>
+  <div class="nav__drawer-foot">
+    <div><strong>+61 450 349 025</strong></div>
+    <div>aestheticsbylua@gmail.com</div>
+  </div>
+</div>
+
+<a class="sticky-book" href="booking.html">Book Your Treatment →</a>
+
+<section class="about-hero">
+  <div class="about-hero__text reveal">
+    <p class="eyebrow">Meet The Founder</p>
+    <h1 class="about-hero__title">A studio<br/>built on <em>care</em>.</h1>
+    <p class="about-hero__lead">
+      Lua's Beauty was founded by Luana — a Brazilian beauty professional whose work is rooted in considered care, calm hands, and the belief that every treatment should be deeply personal.
+    </p>
+  </div>
+  <div class="about-hero__visual reveal reveal-delay-1">
+    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&q=85" alt="Luana, founder of Lua's Beauty" />
+  </div>
+</section>
+
+<section class="about-story">
+  <div class="about-story__grid">
+    <div class="about-story__visual reveal">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=85" alt="Lua's Beauty studio" />
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="eyebrow">The Story</p>
+      <h2 class="about-story__title">From Brazil to <em>North Perth</em>.</h2>
+      <p class="about-story__body about-story__body--lead">
+        Every treatment at Lua's is personalised. The goal is not to change your face — it's to enhance your natural beauty, support your skin confidence, and create a quiet hour of care that feels considered from the moment you arrive.
+      </p>
+      <p class="about-story__body">
+        Luana trained for six years at Ale Palhano Beauty in Brazil, where she developed her detail-driven approach to skin care, lash and brow work, and the sensorial side of beauty treatment. After moving to Perth, she opened Lua's Beauty as a boutique studio — a quiet space dedicated to one client at a time.
+      </p>
+      <p class="about-story__body">
+        Her style is unhurried and conversational. Treatments are planned around your skin, your sensitivities, and the rhythm of your week — never around a template or upsell. You leave with a clear plan, real aftercare guidance, and skin that feels well looked after.
+      </p>
+      <div style="margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="booking.html" class="btn btn--primary">Book a Consultation <span class="btn__arrow">→</span></a>
+        <a href="treatments.html" class="btn btn--ghost">View Treatments</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="section__header reveal" style="max-width:1200px; margin: 0 auto;">
+    <div>
+      <p class="eyebrow">The Philosophy</p>
+      <h2 class="section__title">Three things we hold <em>quietly</em>.</h2>
+    </div>
+    <p class="section__intro">
+      How we care, how we communicate, and how every client feels when they leave — these are the things we measure ourselves on.
+    </p>
+  </div>
+  <div class="values__grid reveal">
+    <div class="value-card">
+      <div class="value-card__num">01</div>
+      <h3 class="value-card__title">Skin health, first.</h3>
+      <p class="value-card__desc">We don't chase quick fixes or trends. Every treatment is designed to support healthier-looking skin over time — through hydration, considered exfoliation, barrier care, and genuine product knowledge.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-card__num">02</div>
+      <h3 class="value-card__title">Natural enhancement.</h3>
+      <p class="value-card__desc">The goal is never to make you look like someone else. Brows should still look like yours — softer, fuller. Skin should feel like yours, on its best day. Subtlety is the standard.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-card__num">03</div>
+      <h3 class="value-card__title">A calm experience.</h3>
+      <p class="value-card__desc">Beauty appointments should feel restorative. Soft music, warm linen, an unhurried conversation. You'll never feel rushed, sold to, or treated like a number on a calendar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="experience" style="background: var(--bg-warm);">
+  <div class="experience__inner reveal">
+    <p class="eyebrow">The Journey</p>
+    <h2 class="experience__title">The Lua's <em>experience</em>.</h2>
+    <p class="experience__lead">
+      Every booking follows the same considered path — designed to feel personal, calm, and entirely about your skin.
+    </p>
+    <div class="experience__steps">
+      <div class="step"><div class="step__num">— Step 01</div><h4 class="step__title">Complimentary Consultation</h4><p class="step__desc">A 30-minute conversation about your skin, lifestyle, history and goals.</p></div>
+      <div class="step"><div class="step__num">— Step 02</div><h4 class="step__title">Personalised Plan</h4><p class="step__desc">A recommended treatment plan based on your skin's needs — not a template.</p></div>
+      <div class="step"><div class="step__num">— Step 03</div><h4 class="step__title">Premium Treatment</h4><p class="step__desc">Your facial or beauty treatment, performed with precision and sensorial care.</p></div>
+      <div class="step"><div class="step__num">— Step 04</div><h4 class="step__title">Aftercare Guidance</h4><p class="step__desc">Clear at-home recommendations, product guidance, and a path for next steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="t-cta">
+  <div class="t-cta__inner reveal">
+    <p class="eyebrow">Begin</p>
+    <h2 class="t-cta__title">Come meet <em>Lua</em>.</h2>
+    <p class="t-cta__sub">A complimentary skin consultation is the best way to start. No pressure, no obligation — just a personalised look at your skin and a plan that suits you.</p>
+    <div class="t-cta__ctas">
+      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+      <a href="contact.html" class="btn btn--ghost">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Lua's <span>Beauty</span></div>
+      <p class="footer__tag">Where beauty meets natural elegance — a North Perth skin and beauty studio, founded with care by Luana.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/luasbeautyclinic" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61572451198546" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://wa.link/5w4hsv" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Treatments</h4>
+      <ul class="footer__list">
+        <li><a href="treatments.html#signature">Signature Skin</a></li>
+        <li><a href="treatments.html#bioage">Advanced Protocols</a></li>
+        <li><a href="treatments.html#lashbrow">Lash &amp; Brow</a></li>
+        <li><a href="skin-consultation-perth.html">Skin Consultation</a></li>
+        <li><a href="treatments.html">Full Menu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Studio</h4>
+      <ul class="footer__list">
+        <li><a href="about.html">About Lua</a></li>
+        <li><a href="before-after.html">Before &amp; After</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Visit</h4>
+      <p class="footer__contact">
+        <strong>Lua's Beauty</strong>
+        Inside Avani Hair<br/>
+        Level 2 / 331 Fitzgerald St<br/>
+        North Perth WA 6006<br/><br/>
+        <strong>Contact</strong>
+        aestheticsbylua@gmail.com<br/>
+        +61 450 349 025
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div>© 2026 Lua's Beauty · <a href="privacy.html" style="color: inherit;">Privacy</a> · <a href="terms.html" style="color: inherit;">Terms</a> · <a href="cancellation.html" style="color: inherit;">Cancellation</a></div>
+    <div>Crafted with care</div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const nav = document.getElementById('nav');
+const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+
+</body>
+</html>
