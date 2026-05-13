@@ -50,7 +50,9 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line-soft);
 }
-.nav__brand { font-family: var(--display); font-size: 26px; letter-spacing: 0.18em; color: var(--ink); }
+.nav__brand { font-family: var(--display); font-size: 26px; letter-spacing: 0.18em; color: var(--ink); display: inline-flex; align-items: center; gap: 14px; line-height: 1; }
+.nav__brand img { width: 44px; height: 44px; display: block; transition: transform .6s var(--ease); }
+.nav__brand:hover img { transform: rotate(-8deg); }
 .nav__brand span { color: var(--gold); }
 .nav__menu { display: flex; gap: 44px; list-style: none; margin: 0; padding: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; }
 .nav__menu a { position: relative; transition: color 0.4s var(--ease); }
@@ -270,7 +272,8 @@ footer {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 64px; margin-bottom: 80px;
 }
-.footer__brand { font-family: var(--display); font-size: 36px; color: var(--ink); margin: 0 0 24px; letter-spacing: 0.04em; }
+.footer__brand { font-family: var(--display); font-size: 36px; color: var(--ink); margin: 0 0 24px; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 16px; line-height: 1; }
+.footer__brand img { width: 56px; height: 56px; display: block; }
 .footer__brand span { color: var(--gold); font-style: italic; font-family: var(--serif); }
 .footer__tag { font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.55; max-width: 320px; margin-bottom: 32px; }
 .footer__col-title { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); margin: 0 0 24px; font-weight: 500; }
@@ -371,7 +374,9 @@ footer {
 
 @media (max-width: 600px) {
   .nav { padding: 18px 22px; }
-  .nav__brand { font-size: 20px; }
+  .nav__brand { font-size: 20px; gap: 10px; }
+  .nav__brand img { width: 36px; height: 36px; }
+  .footer__brand img { width: 48px; height: 48px; }
   .t-hero, .benefits, .process, .faq, .t-cta { padding-left: 22px; padding-right: 22px; }
   .t-hero { padding-top: 120px; }
   .t-hero__meta { grid-template-columns: 1fr; gap: 16px; }
