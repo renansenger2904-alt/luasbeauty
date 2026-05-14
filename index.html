@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20260513e" />
+<link rel="stylesheet" href="styles.css?v=20260513f" />
 
 <style>
   /* === HERO === */
@@ -452,56 +452,32 @@
 <a class="sticky-book" href="booking.html">Book Your Treatment →</a>
 
 <header class="cine-hero" id="hero">
-  <div class="cine-hero__track">
+  <video class="cine-hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/hero.jpg" aria-hidden="true">
+    <source src="assets/video/hero-720.mp4" type="video/mp4" media="(min-width: 768px)" />
+    <source src="assets/video/hero-480.mp4" type="video/mp4" />
+  </video>
+  <div class="cine-hero__veil"></div>
 
-    <div class="cine-hero__stage">
-      <video class="cine-hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero.jpg" aria-hidden="true">
-        <source src="assets/video/hero-720.mp4" type="video/mp4" media="(min-width: 768px)" />
-        <source src="assets/video/hero-480.mp4" type="video/mp4" />
-      </video>
-      <div class="cine-hero__veil"></div>
-
-      <div class="cine-hero__panel cine-hero__panel--1 is-active" data-panel="0">
-        <p class="cine-hero__eyebrow">Skin &amp; Beauty Studio · North Perth</p>
-        <h1 class="cine-hero__title">Where beauty meets <em>natural</em> elegance.</h1>
-        <p class="cine-hero__sub">A boutique facial and beauty studio founded by Luana — Brazilian-trained, considered, deeply personal.</p>
-        <div class="cine-hero__ctas">
-          <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
-          <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
-        </div>
-      </div>
-
-      <div class="cine-hero__panel cine-hero__panel--2" data-panel="1">
-        <p class="cine-hero__eyebrow">Treatments · Personalised</p>
-        <h2 class="cine-hero__title">Skin that looks like <em>yours</em>, on its best day.</h2>
-        <p class="cine-hero__sub">Facials, dermaplaning, microdermabrasion, LED therapy, lash lift, brow lamination — every treatment shaped around you.</p>
-        <div class="cine-hero__ctas">
-          <a href="treatments.html" class="btn btn--primary">View the Menu <span class="btn__arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="cine-hero__panel cine-hero__panel--3" data-panel="2">
-        <p class="cine-hero__eyebrow">Free Consultation</p>
-        <h2 class="cine-hero__title">Begin with a <em>conversation</em>.</h2>
-        <p class="cine-hero__sub">A complimentary 30-minute skin consultation. No pressure, no obligation — just a personalised plan for your skin.</p>
-        <div class="cine-hero__ctas">
-          <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
-        </div>
-      </div>
-
-      <a class="cine-hero__scroll" href="#signature" aria-label="Scroll">
-        <span class="cine-hero__scroll-label">Scroll</span>
-        <span class="cine-hero__scroll-line"></span>
-      </a>
-
-      <div class="cine-hero__marquee" aria-hidden="true">
-        <div class="cine-hero__marquee-track">
-          <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
-          <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
-        </div>
-      </div>
+  <div class="cine-hero__content">
+    <p class="cine-hero__eyebrow">Skin &amp; Beauty Studio · North Perth</p>
+    <h1 class="cine-hero__title">Where beauty meets <em>natural</em> elegance.</h1>
+    <p class="cine-hero__sub">A boutique facial and beauty studio founded by Luana — Brazilian-trained, considered, deeply personal.</p>
+    <div class="cine-hero__ctas">
+      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+      <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
     </div>
+  </div>
 
+  <a class="cine-hero__scroll" href="#signature" aria-label="Scroll">
+    <span class="cine-hero__scroll-label">Scroll</span>
+    <span class="cine-hero__scroll-line"></span>
+  </a>
+
+  <div class="cine-hero__marquee" aria-hidden="true">
+    <div class="cine-hero__marquee-track">
+      <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
+      <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
+    </div>
   </div>
 </header>
 
@@ -1133,38 +1109,27 @@
     requestAnimationFrame(loop);
   }
 
-  /* ===== CINEMATIC HERO — panel switching + video movement ===== */
+  /* ===== CINEMATIC HERO — light scroll fade on content =====
+     The hero is a normal 100vh section. As the user scrolls past it,
+     the centered text fades + lifts slightly so it doesn't compete
+     with the next section. No scroll-jacking. */
   const cineHero = document.getElementById('hero');
-  const cinePanels = cineHero ? cineHero.querySelectorAll('.cine-hero__panel') : [];
-  const cineVideo = cineHero ? cineHero.querySelector('.cine-hero__video') : null;
-
-  if (cineHero && cinePanels.length) {
+  const cineContent = cineHero ? cineHero.querySelector('.cine-hero__content') : null;
+  if (cineHero && cineContent) {
     let cineTicking = false;
     const updateCine = () => {
-      const rect = cineHero.getBoundingClientRect();
-      const total = cineHero.offsetHeight - window.innerHeight;
-      const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / total));
-
-      // Panel switching — 3 panels split evenly
-      let activeIdx;
-      if (progress < 0.34) activeIdx = 0;
-      else if (progress < 0.67) activeIdx = 1;
-      else activeIdx = 2;
-      cinePanels.forEach((p, i) => p.classList.toggle('is-active', i === activeIdx));
-
-      // Subtle video movement: gentle scale-up + parallax as you scroll through
-      if (cineVideo) {
-        const scale = 1 + progress * 0.06;
-        const translateY = progress * -40; // video drifts UP slowly
-        cineVideo.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+      const sc = window.scrollY;
+      const h = window.innerHeight;
+      if (sc < h * 1.1) {
+        const p = Math.min(sc / (h * 0.7), 1);
+        cineContent.style.opacity = String(1 - p);
+        cineContent.style.transform = `translate3d(0, ${-p * 60}px, 0)`;
       }
       cineTicking = false;
     };
     window.addEventListener('scroll', () => {
       if (!cineTicking) { requestAnimationFrame(updateCine); cineTicking = true; }
     }, { passive: true });
-    updateCine();
   }
 
   /* ===== PARALLAX on any .parallax-media (scroll-driven) ===== */

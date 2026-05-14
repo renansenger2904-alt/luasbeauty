@@ -1142,24 +1142,16 @@ footer {
 }
 
 /* ============================================
-   CINEMATIC FULLSCREEN VIDEO HERO
+   CINEMATIC FULLSCREEN VIDEO HERO (no scroll-jacking)
    ============================================ */
 .cine-hero {
   position: relative;
-  height: 320vh; /* tall section so video stays sticky for ~3 panels */
-  margin: 0;
-}
-.cine-hero__track {
-  position: relative;
-  height: 100%;
-}
-.cine-hero__stage {
-  position: sticky;
-  top: 0;
   height: 100vh;
+  min-height: 600px;
   width: 100%;
   overflow: hidden;
   background: var(--ink);
+  margin: 0;
 }
 .cine-hero__video {
   position: absolute;
@@ -1169,6 +1161,11 @@ footer {
   object-fit: cover;
   z-index: 1;
   will-change: transform;
+  animation: cine-kenburns 22s ease-in-out infinite alternate;
+}
+@keyframes cine-kenburns {
+  0%   { transform: scale(1.02) translate3d(0, 0, 0); }
+  100% { transform: scale(1.08) translate3d(-1%, -1%, 0); }
 }
 .cine-hero__veil {
   position: absolute;
@@ -1184,27 +1181,18 @@ footer {
   pointer-events: none;
 }
 
-.cine-hero__panel {
+.cine-hero__content {
   position: absolute;
   inset: 0;
   z-index: 3;
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 100px 32px 140px;
+  padding: 100px 32px 160px;
   color: var(--cream);
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
-  pointer-events: none;
+  will-change: transform, opacity;
 }
-.cine-hero__panel.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.cine-hero__panel > div, .cine-hero__panel > * { max-width: 1000px; }
-.cine-hero__panel-inner { max-width: 1000px; }
+.cine-hero__content > * { max-width: 1000px; }
 
 .cine-hero__eyebrow {
   font-size: 11px;
@@ -1366,25 +1354,23 @@ footer {
 /* When nav scrolls over the dark hero, switch to dark text scheme */
 .cine-hero ~ * { position: relative; z-index: 5; }
 
-/* Mobile: shorter sticky section, larger touch targets */
 @media (max-width: 1024px) {
-  .cine-hero { height: 260vh; }
-  .cine-hero__panel { padding: 90px 22px 120px; }
+  .cine-hero__content { padding: 90px 22px 120px; }
   .cine-hero__title { font-size: clamp(42px, 11vw, 72px); }
   .cine-hero__sub { font-size: 17px; }
   .cine-hero__ctas { margin-top: 36px; }
-  .cine-hero__scroll { bottom: 90px; }
+  .cine-hero__scroll { bottom: 84px; }
   .cine-hero__marquee { font-size: 16px; padding: 18px 0; }
 }
 @media (max-width: 600px) {
-  .cine-hero { height: 240vh; }
-  .cine-hero__panel { padding: 80px 18px 100px; }
-  .cine-hero__title { font-size: clamp(36px, 11vw, 56px); }
+  .cine-hero { min-height: 560px; }
+  .cine-hero__content { padding: 80px 18px 110px; }
+  .cine-hero__title { font-size: clamp(36px, 10vw, 56px); }
   .cine-hero__sub { font-size: 16px; max-width: 90%; }
   .cine-hero__ctas { flex-direction: column; align-items: center; gap: 12px; width: 100%; }
   .cine-hero__ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
   .cine-hero__scroll { display: none; }
-  .cine-hero__marquee { font-size: 14px; padding: 14px 0; }
+  .cine-hero__marquee { font-size: 13px; padding: 12px 0; }
 }
 
 /* Nav over dark hero — make it readable */
