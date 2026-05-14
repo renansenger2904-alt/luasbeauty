@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20260513d" />
+<link rel="stylesheet" href="styles.css?v=20260513e" />
 
 <style>
   /* === HERO === */
@@ -451,43 +451,57 @@
 
 <a class="sticky-book" href="booking.html">Book Your Treatment →</a>
 
-<header class="hero reveal" id="hero">
-  <div class="hero__eyebrow">Skin &amp; Beauty Studio · North Perth</div>
-  <div class="hero__content">
-    <h1 class="hero__title">
-      Where beauty<br/>
-      meets <em>natural</em><br/>
-      elegance.
-    </h1>
-    <p class="hero__sub">
-      A North Perth skin and beauty studio founded by Luana — a Brazilian beauty professional who believes every treatment should leave you feeling radiant, confident, and naturally beautiful.
-    </p>
-    <div class="hero__ctas">
-      <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
-      <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
-    </div>
-  </div>
-  <div class="hero__visual">
-    <div class="hero__img-frame">
-      <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero.jpg" aria-label="Skincare moment at Lua's Beauty">
+<header class="cine-hero" id="hero">
+  <div class="cine-hero__track">
+
+    <div class="cine-hero__stage">
+      <video class="cine-hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero.jpg" aria-hidden="true">
         <source src="assets/video/hero-720.mp4" type="video/mp4" media="(min-width: 768px)" />
         <source src="assets/video/hero-480.mp4" type="video/mp4" />
-        <img src="assets/img/hero.jpg" alt="Skincare moment at Lua's Beauty" />
       </video>
-    </div>
-    <div class="hero__badge">
-      <div class="hero__badge-circle">L</div>
-      <div>
-        Personally curated by<br/>
-        <strong style="font-weight: 500; letter-spacing: 0.05em;">Luana</strong>
+      <div class="cine-hero__veil"></div>
+
+      <div class="cine-hero__panel cine-hero__panel--1 is-active" data-panel="0">
+        <p class="cine-hero__eyebrow">Skin &amp; Beauty Studio · North Perth</p>
+        <h1 class="cine-hero__title">Where beauty meets <em>natural</em> elegance.</h1>
+        <p class="cine-hero__sub">A boutique facial and beauty studio founded by Luana — Brazilian-trained, considered, deeply personal.</p>
+        <div class="cine-hero__ctas">
+          <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+          <a href="treatments.html" class="btn btn--ghost">Explore Treatments</a>
+        </div>
+      </div>
+
+      <div class="cine-hero__panel cine-hero__panel--2" data-panel="1">
+        <p class="cine-hero__eyebrow">Treatments · Personalised</p>
+        <h2 class="cine-hero__title">Skin that looks like <em>yours</em>, on its best day.</h2>
+        <p class="cine-hero__sub">Facials, dermaplaning, microdermabrasion, LED therapy, lash lift, brow lamination — every treatment shaped around you.</p>
+        <div class="cine-hero__ctas">
+          <a href="treatments.html" class="btn btn--primary">View the Menu <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="cine-hero__panel cine-hero__panel--3" data-panel="2">
+        <p class="cine-hero__eyebrow">Free Consultation</p>
+        <h2 class="cine-hero__title">Begin with a <em>conversation</em>.</h2>
+        <p class="cine-hero__sub">A complimentary 30-minute skin consultation. No pressure, no obligation — just a personalised plan for your skin.</p>
+        <div class="cine-hero__ctas">
+          <a href="booking.html" class="btn btn--primary">Book Free Consultation <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+
+      <a class="cine-hero__scroll" href="#signature" aria-label="Scroll">
+        <span class="cine-hero__scroll-label">Scroll</span>
+        <span class="cine-hero__scroll-line"></span>
+      </a>
+
+      <div class="cine-hero__marquee" aria-hidden="true">
+        <div class="cine-hero__marquee-track">
+          <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
+          <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>LED Therapy</span><span>Brow Lamination</span><span>Lash Lift</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="hero__marquee" aria-hidden="true">
-    <div class="hero__marquee-track">
-      <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>Pro-Aging ExoPeptide</span><span>Brow Lamination</span><span>Lash Lift</span>
-      <span>The Glow Facial</span><span>Hydra Oxygen</span><span>Dermaplaning Glow</span><span>Ultimate Renewal</span><span>Pro-Aging ExoPeptide</span><span>Brow Lamination</span><span>Lash Lift</span>
-    </div>
+
   </div>
 </header>
 
@@ -929,11 +943,11 @@
     <a href="https://www.instagram.com/luasbeautyclinic" class="social__handle">@luasbeautyclinic →</a>
   </div>
   <div class="social__grid">
-    <a class="social__tile reveal" href="https://www.instagram.com/luasbeautyclinic"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=85" alt="Studio" /></a>
-    <a class="social__tile reveal reveal-delay-1" href="https://www.instagram.com/luasbeautyclinic"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=85" alt="Lashes" /></a>
-    <a class="social__tile reveal reveal-delay-2" href="https://www.instagram.com/luasbeautyclinic"><img src="https://images.unsplash.com/photo-1612343270580-7d8b4f73ec57?w=600&q=85" alt="Skin care" /></a>
-    <a class="social__tile reveal reveal-delay-3" href="https://www.instagram.com/luasbeautyclinic"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=85" alt="Treatment" /></a>
-    <a class="social__tile reveal reveal-delay-4" href="https://www.instagram.com/luasbeautyclinic"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=85" alt="Beauty" /></a>
+    <a class="social__tile reveal" href="https://www.instagram.com/luasbeautyclinic"><img class="parallax-media" data-parallax="0.10" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=85" alt="Studio" /></a>
+    <a class="social__tile reveal reveal-delay-1" href="https://www.instagram.com/luasbeautyclinic"><img class="parallax-media" data-parallax="0.12" src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=85" alt="Lashes" /></a>
+    <a class="social__tile reveal reveal-delay-2" href="https://www.instagram.com/luasbeautyclinic"><img class="parallax-media" data-parallax="0.08" src="https://images.unsplash.com/photo-1612343270580-7d8b4f73ec57?w=600&q=85" alt="Skin care" /></a>
+    <a class="social__tile reveal reveal-delay-3" href="https://www.instagram.com/luasbeautyclinic"><img class="parallax-media" data-parallax="0.14" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=85" alt="Treatment" /></a>
+    <a class="social__tile reveal reveal-delay-4" href="https://www.instagram.com/luasbeautyclinic"><img class="parallax-media" data-parallax="0.10" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=85" alt="Beauty" /></a>
   </div>
 </section>
 
@@ -1045,7 +1059,6 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  setTimeout(() => document.getElementById('hero').classList.add('in'), 100);
   const nav = document.getElementById('nav');
   const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -1120,20 +1133,38 @@
     requestAnimationFrame(loop);
   }
 
-  /* ===== PARALLAX on hero media (video or img) ===== */
-  const heroMedia = document.querySelector('.hero__img-frame video, .hero__img-frame img');
-  if (heroMedia) {
-    let ticking = false;
-    const update = () => {
-      const sc = window.scrollY;
-      if (sc < window.innerHeight) {
-        heroMedia.style.transform = `translateY(${sc * 0.18}px) scale(${1 + Math.min(sc * 0.0002, 0.08)})`;
+  /* ===== CINEMATIC HERO — panel switching + video movement ===== */
+  const cineHero = document.getElementById('hero');
+  const cinePanels = cineHero ? cineHero.querySelectorAll('.cine-hero__panel') : [];
+  const cineVideo = cineHero ? cineHero.querySelector('.cine-hero__video') : null;
+
+  if (cineHero && cinePanels.length) {
+    let cineTicking = false;
+    const updateCine = () => {
+      const rect = cineHero.getBoundingClientRect();
+      const total = cineHero.offsetHeight - window.innerHeight;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / total));
+
+      // Panel switching — 3 panels split evenly
+      let activeIdx;
+      if (progress < 0.34) activeIdx = 0;
+      else if (progress < 0.67) activeIdx = 1;
+      else activeIdx = 2;
+      cinePanels.forEach((p, i) => p.classList.toggle('is-active', i === activeIdx));
+
+      // Subtle video movement: gentle scale-up + parallax as you scroll through
+      if (cineVideo) {
+        const scale = 1 + progress * 0.06;
+        const translateY = progress * -40; // video drifts UP slowly
+        cineVideo.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
       }
-      ticking = false;
+      cineTicking = false;
     };
     window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      if (!cineTicking) { requestAnimationFrame(updateCine); cineTicking = true; }
     }, { passive: true });
+    updateCine();
   }
 
   /* ===== PARALLAX on any .parallax-media (scroll-driven) ===== */
@@ -1146,7 +1177,7 @@
         if (rect.bottom < 0 || rect.top > vh) return;
         const progress = (vh - rect.top) / (vh + rect.height);
         const speed = parseFloat(el.dataset.parallax || '0.15');
-        el.style.transform = `translate3d(0, ${(progress - 0.5) * 100 * speed}px, 0)`;
+        el.style.transform = `translate3d(0, ${(progress - 0.5) * 100 * speed}px, 0) scale(1.15)`;
       });
     };
     window.addEventListener('scroll', updateP, { passive: true });
