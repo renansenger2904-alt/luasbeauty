@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20260513b" />
+<link rel="stylesheet" href="styles.css?v=20260513c" />
 
 <style>
   /* === HERO === */
@@ -406,6 +406,10 @@
 
 <body>
 
+<div class="page-veil" id="page-veil">
+  <img class="page-veil__mark" src="assets/img/logo.png" alt="" width="100" height="100" />
+</div>
+
 <nav class="nav" id="nav">
   <a href="index.html" class="nav__brand" aria-label="Lua's Beauty home"><img src="assets/img/logo.png" alt="" width="40" height="40" /><span class="nav__brand-mark">Lua&#39;s Beauty</span></a>
   <ul class="nav__menu">
@@ -569,27 +573,72 @@
   </div>
 </section>
 
-<section class="section philosophy" id="philosophy">
-  <div class="philosophy__grid">
-    <div class="philosophy__visual reveal">
-      <img src="assets/img/treatment-1.jpg" alt="Editorial beauty portrait — Lua's Beauty" />
-      <div class="philosophy__quote-mark">"</div>
+<section class="scroll-story" id="philosophy">
+  <div class="scroll-story__inner">
+    <div class="scroll-story__visual reveal">
+      <div class="scroll-story__layer is-active" data-layer="0">
+        <img src="assets/img/hero.jpg" alt="Quiet moment of skincare at Lua's Beauty" />
+      </div>
+      <div class="scroll-story__layer" data-layer="1">
+        <img src="assets/img/featured.jpg" alt="Calm, considered facial treatment" />
+      </div>
+      <div class="scroll-story__layer" data-layer="2">
+        <img src="assets/img/treatment-1.jpg" alt="Editorial beauty portrait" />
+      </div>
+      <div class="scroll-story__caption">
+        <span class="scroll-story__caption-num" id="story-num">01 / 03</span>
+        <span id="story-label">The Philosophy</span>
+      </div>
     </div>
-    <div class="philosophy__text reveal reveal-delay-1">
-      <p class="eyebrow">Our Philosophy</p>
-      <h2 class="philosophy__title">Beauty in its <em>quietest</em> form.</h2>
-      <p class="philosophy__lead">
-        We believe natural beauty is something to be enhanced — never altered. Confidence is built slowly, through skin that feels well, and care that honours it.
-      </p>
-      <p class="philosophy__body">
-        At Lua's, every treatment goes beyond aesthetics — it's a focused moment of self-care, a quiet reset for your skin and your day. We don't chase trends or quick fixes. We focus on skin health, considered techniques, and the kind of subtle, lasting results that make you feel quietly, undeniably yourself.
-      </p>
-      <ul class="philosophy__pillars">
-        <li>Skin health first</li>
-        <li>Natural enhancement</li>
-        <li>Confidence, gently</li>
-        <li>A long-term ritual</li>
-      </ul>
+
+    <div class="scroll-story__chapters">
+      <article class="chapter is-active" data-chapter="0">
+        <p class="chapter__num">01 / Philosophy</p>
+        <h2 class="chapter__title">Beauty in its <em>quietest</em> form.</h2>
+        <p class="chapter__lead">
+          Natural beauty is something to be enhanced — never altered. Confidence is built slowly, through skin that feels well, and care that honours it.
+        </p>
+        <p class="chapter__body">
+          At Lua's, every treatment goes beyond aesthetics — it's a focused moment of self-care, a quiet reset for your skin and your day. We don't chase trends or quick fixes. We focus on skin health, considered techniques, and the kind of subtle, lasting results that make you feel quietly, undeniably yourself.
+        </p>
+        <div class="chapter__tags">
+          <span>Skin Health First</span>
+          <span>Natural Enhancement</span>
+          <span>Considered Care</span>
+        </div>
+      </article>
+
+      <article class="chapter" data-chapter="1">
+        <p class="chapter__num">02 / The Ritual</p>
+        <h2 class="chapter__title">A ritual, not an <em>appointment</em>.</h2>
+        <p class="chapter__lead">
+          From the moment you arrive — the warmth of the welcome, the linen, the soft light, the music — every detail has been considered.
+        </p>
+        <p class="chapter__body">
+          Lua's is designed to feel less like a salon, and more like a quiet escape. Unhurried. Sensorial. One client at a time. The treatment isn't just on your skin — it's a quiet hour given back to you.
+        </p>
+        <div class="chapter__tags">
+          <span>Boutique Studio</span>
+          <span>One Client</span>
+          <span>North Perth</span>
+        </div>
+      </article>
+
+      <article class="chapter" data-chapter="2">
+        <p class="chapter__num">03 / The Hands</p>
+        <h2 class="chapter__title">Trained in <em>Brazil</em>, refined in Perth.</h2>
+        <p class="chapter__lead">
+          Six years at Ale Palhano Beauty in Brazil. Now bringing that depth of skill — and the warmth of Brazilian skincare culture — to North Perth.
+        </p>
+        <p class="chapter__body">
+          Every appointment is performed personally by Luana. Your relationship is direct, consistent, and built on trust. The kind of subtle, lasting results that come from genuine craft and time.
+        </p>
+        <div class="chapter__tags">
+          <span>6 Years Experience</span>
+          <span>Personally by Luana</span>
+          <span>Brazilian Heritage</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1013,6 +1062,79 @@
     setTimeout(() => { const r = slider.getBoundingClientRect(); setPos(r.left + r.width / 2); }, 200);
   }
   document.querySelectorAll('.ba-slider').forEach(initSlider);
+
+  /* ===== STICKY SCROLL-STORY chapter sync ===== */
+  const storyChapters = document.querySelectorAll('.scroll-story .chapter');
+  const storyLayers = document.querySelectorAll('.scroll-story .scroll-story__layer');
+  const storyNum = document.getElementById('story-num');
+  const storyLabel = document.getElementById('story-label');
+  const STORY_LABELS = ['The Philosophy', 'The Ritual', 'The Hands'];
+  if (storyChapters.length && 'IntersectionObserver' in window) {
+    const chapterObs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          const idx = parseInt(en.target.dataset.chapter, 10);
+          storyChapters.forEach(c => c.classList.toggle('is-active', c === en.target));
+          storyLayers.forEach((l, i) => l.classList.toggle('is-active', i === idx));
+          if (storyNum) storyNum.textContent = `0${idx + 1} / 0${storyChapters.length}`;
+          if (storyLabel) storyLabel.textContent = STORY_LABELS[idx] || '';
+        }
+      });
+    }, { threshold: 0.55, rootMargin: '-25% 0px -25% 0px' });
+    storyChapters.forEach(c => chapterObs.observe(c));
+  }
+
+  /* ===== GOLD CURSOR DOT (desktop only) ===== */
+  if (window.matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    document.body.appendChild(dot);
+    let x = 0, y = 0, tx = 0, ty = 0;
+    document.addEventListener('mousemove', e => {
+      tx = e.clientX; ty = e.clientY;
+      dot.classList.add('is-visible');
+    });
+    const interactive = 'a, button, .ba-slider, .concern, .cat, .sig-card, .svc-row';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(interactive)) dot.classList.add('is-hover');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(interactive)) dot.classList.remove('is-hover');
+    });
+    function loop() {
+      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
+      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+
+  /* ===== PARALLAX on hero image ===== */
+  const heroImg = document.querySelector('.hero__img-frame img');
+  if (heroImg) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sc = window.scrollY;
+          if (sc < window.innerHeight) {
+            heroImg.style.transform = `translateY(${sc * 0.12}px) scale(${1 + sc * 0.0002})`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ===== PAGE VEIL — quick cinematic intro ===== */
+  const veil = document.getElementById('page-veil');
+  if (veil) {
+    window.addEventListener('load', () => {
+      setTimeout(() => veil.classList.add('is-gone'), 700);
+    });
+    setTimeout(() => veil.classList.add('is-gone'), 1800); // safety
+  }
 </script>
 
 </body>
