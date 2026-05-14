@@ -27,8 +27,9 @@ body {
   margin: 0; background: var(--bg); color: var(--ink);
   font-family: var(--sans); font-weight: 300;
   font-size: 16px; line-height: 1.7; letter-spacing: 0.01em;
-  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+html { overflow-x: clip; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--nude); color: var(--cream); }
@@ -751,7 +752,9 @@ footer {
   aspect-ratio: 4/5; border-radius: 200px 200px 4px 4px;
   overflow: hidden; position: relative;
 }
-.video-block__stage img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.85); }
+.video-block__stage img,
+.video-block__stage video,
+.video-block__media { width: 100%; height: 100%; object-fit: cover; filter: brightness(.92); display: block; }
 .video-block__play {
   position: absolute; inset: 0; display: grid; place-items: center;
   pointer-events: none;
@@ -903,7 +906,6 @@ footer {
 .scroll-story {
   position: relative;
   background: var(--cream);
-  overflow: hidden;
   padding: 120px 0 80px;
 }
 .scroll-story__inner {
@@ -913,12 +915,12 @@ footer {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 56px;
+  align-items: flex-start;
 }
 .scroll-story__visual {
   position: sticky;
-  top: 12vh;
-  height: 76vh;
-  align-self: start;
+  top: 14vh;
+  height: 72vh;
   overflow: hidden;
   border-radius: 4px;
   background: var(--bg-deep);
