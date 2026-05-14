@@ -12,10 +12,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20260513b" />
+<link rel="stylesheet" href="styles.css?v=20260513c" />
 </head>
 
 <body>
+
+<div class="page-veil" id="page-veil">
+  <img class="page-veil__mark" src="assets/img/logo.png" alt="" width="100" height="100" />
+</div>
 
 <nav class="nav" id="nav">
   <a href="index.html" class="nav__brand" aria-label="Lua's Beauty home"><img src="assets/img/logo.png" alt="" width="40" height="40" /><span class="nav__brand-mark">Lua&#39;s Beauty</span></a>
@@ -65,27 +69,70 @@
   </div>
 </section>
 
-<section class="about-story">
-  <div class="about-story__grid">
-    <div class="about-story__visual reveal">
-      <img src="assets/img/treatment-2.jpg" alt="Lua's Beauty studio moment" />
-    </div>
-    <div class="reveal reveal-delay-1">
-      <p class="eyebrow">The Story</p>
-      <h2 class="about-story__title">From Brazil to <em>North Perth</em>.</h2>
-      <p class="about-story__body about-story__body--lead">
-        Every treatment at Lua's is personalised. The goal is not to change your face — it's to enhance your natural beauty, support your skin confidence, and create a quiet hour of care that feels considered from the moment you arrive.
-      </p>
-      <p class="about-story__body">
-        Luana trained for six years at Ale Palhano Beauty in Brazil, where she developed her detail-driven approach to skin care, lash and brow work, and the sensorial side of beauty treatment. After moving to Perth, she opened Lua's Beauty as a boutique studio — a quiet space dedicated to one client at a time.
-      </p>
-      <p class="about-story__body">
-        Her style is unhurried and conversational. Treatments are planned around your skin, your sensitivities, and the rhythm of your week — never around a template or upsell. You leave with a clear plan, real aftercare guidance, and skin that feels well looked after.
-      </p>
-      <div style="margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="booking.html" class="btn btn--primary">Book a Consultation <span class="btn__arrow">→</span></a>
-        <a href="treatments.html" class="btn btn--ghost">View Treatments</a>
+<section class="scroll-story">
+  <div class="scroll-story__inner">
+    <div class="scroll-story__visual reveal">
+      <div class="scroll-story__layer is-active" data-layer="0">
+        <img src="assets/img/treatment-2.jpg" alt="Lua's Beauty studio moment" />
       </div>
+      <div class="scroll-story__layer" data-layer="1">
+        <img src="assets/img/featured.jpg" alt="Calm facial moment" />
+      </div>
+      <div class="scroll-story__layer" data-layer="2">
+        <img src="assets/img/treatment-1.jpg" alt="Editorial beauty portrait" />
+      </div>
+      <div class="scroll-story__caption">
+        <span class="scroll-story__caption-num" id="story-num">01 / 03</span>
+        <span id="story-label">The Story</span>
+      </div>
+    </div>
+
+    <div class="scroll-story__chapters">
+      <article class="chapter is-active" data-chapter="0">
+        <p class="chapter__num">01 / The Story</p>
+        <h2 class="chapter__title">From Brazil to <em>North Perth</em>.</h2>
+        <p class="chapter__lead">
+          Every treatment at Lua's is personalised. The goal is not to change your face — it's to enhance your natural beauty, support your skin confidence, and create a quiet hour of care that feels considered from the moment you arrive.
+        </p>
+        <p class="chapter__body">
+          Luana trained for six years at Ale Palhano Beauty in Brazil, where she developed her detail-driven approach to skin care, lash and brow work, and the sensorial side of beauty treatment.
+        </p>
+        <div class="chapter__tags">
+          <span>Brazilian Heritage</span>
+          <span>6 Years Trained</span>
+        </div>
+      </article>
+
+      <article class="chapter" data-chapter="1">
+        <p class="chapter__num">02 / The Studio</p>
+        <h2 class="chapter__title">A boutique studio, <em>one</em> at a time.</h2>
+        <p class="chapter__lead">
+          After moving to Perth, Luana opened Lua's Beauty as a quiet space dedicated to one client at a time — boutique, unhurried, deeply personal.
+        </p>
+        <p class="chapter__body">
+          Inside Avani Hair on Fitzgerald Street, the studio is designed to feel less like a salon and more like a quiet escape. The kind of room that calms your nervous system the moment you arrive.
+        </p>
+        <div class="chapter__tags">
+          <span>North Perth</span>
+          <span>By Appointment</span>
+          <span>One Client</span>
+        </div>
+      </article>
+
+      <article class="chapter" data-chapter="2">
+        <p class="chapter__num">03 / The Approach</p>
+        <h2 class="chapter__title">Unhurried, considered, <em>yours</em>.</h2>
+        <p class="chapter__lead">
+          Treatments are planned around your skin, your sensitivities, and the rhythm of your week — never a template, never an upsell.
+        </p>
+        <p class="chapter__body">
+          You leave with a clear plan, genuine aftercare guidance, and skin that feels well looked after. The kind of subtle, lasting result that only comes from real craft.
+        </p>
+        <div style="margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="booking.html" class="btn btn--primary">Book a Consultation <span class="btn__arrow">→</span></a>
+          <a href="treatments.html" class="btn btn--ghost">View Treatments</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -206,6 +253,46 @@ const nav = document.getElementById('nav');
 const onScroll = () => { if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+/* Sticky scroll-story chapter sync */
+const storyChapters = document.querySelectorAll('.scroll-story .chapter');
+const storyLayers = document.querySelectorAll('.scroll-story .scroll-story__layer');
+const storyNum = document.getElementById('story-num');
+const storyLabel = document.getElementById('story-label');
+const STORY_LABELS = ['The Story', 'The Studio', 'The Approach'];
+if (storyChapters.length) {
+  const chapterObs = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        const idx = parseInt(en.target.dataset.chapter, 10);
+        storyChapters.forEach(c => c.classList.toggle('is-active', c === en.target));
+        storyLayers.forEach((l, i) => l.classList.toggle('is-active', i === idx));
+        if (storyNum) storyNum.textContent = `0${idx + 1} / 0${storyChapters.length}`;
+        if (storyLabel) storyLabel.textContent = STORY_LABELS[idx] || '';
+      }
+    });
+  }, { threshold: 0.55, rootMargin: '-25% 0px -25% 0px' });
+  storyChapters.forEach(c => chapterObs.observe(c));
+}
+
+/* Page veil fade */
+const veil = document.getElementById('page-veil');
+if (veil) {
+  window.addEventListener('load', () => setTimeout(() => veil.classList.add('is-gone'), 700));
+  setTimeout(() => veil.classList.add('is-gone'), 1800);
+}
+
+/* Gold cursor dot (desktop) */
+if (window.matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
+  const dot = document.createElement('div');
+  dot.className = 'cursor-dot';
+  document.body.appendChild(dot);
+  let x = 0, y = 0, tx = 0, ty = 0;
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; dot.classList.add('is-visible'); });
+  document.addEventListener('mouseover', e => { if (e.target.closest('a, button')) dot.classList.add('is-hover'); });
+  document.addEventListener('mouseout', e => { if (e.target.closest('a, button')) dot.classList.remove('is-hover'); });
+  (function loop(){ x += (tx-x)*0.18; y += (ty-y)*0.18; dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`; requestAnimationFrame(loop); })();
+}
 </script>
 
 </body>
