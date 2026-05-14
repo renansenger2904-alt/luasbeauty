@@ -12,14 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20260513f" />
+<link rel="stylesheet" href="styles.css?v=20260514a" />
 </head>
 
 <body>
 
-<div class="page-veil" id="page-veil">
-  <img class="page-veil__mark" src="assets/img/logo.png" alt="" width="100" height="100" />
-</div>
 
 <nav class="nav" id="nav">
   <a href="index.html" class="nav__brand" aria-label="Lua's Beauty home"><img src="assets/img/logo.png" alt="" width="40" height="40" /><span class="nav__brand-mark">Lua&#39;s Beauty</span></a>
@@ -97,10 +94,6 @@
         <p class="chapter__body">
           Luana trained for six years at Ale Palhano Beauty in Brazil, where she developed her detail-driven approach to skin care, lash and brow work, and the sensorial side of beauty treatment.
         </p>
-        <div class="chapter__tags">
-          <span>Brazilian Heritage</span>
-          <span>6 Years Trained</span>
-        </div>
       </article>
 
       <article class="chapter" data-chapter="1">
@@ -112,11 +105,6 @@
         <p class="chapter__body">
           Inside Avani Hair on Fitzgerald Street, the studio is designed to feel less like a salon and more like a quiet escape. The kind of room that calms your nervous system the moment you arrive.
         </p>
-        <div class="chapter__tags">
-          <span>North Perth</span>
-          <span>By Appointment</span>
-          <span>One Client</span>
-        </div>
       </article>
 
       <article class="chapter" data-chapter="2">
@@ -275,65 +263,24 @@ if (storyChapters.length) {
   storyChapters.forEach(c => chapterObs.observe(c));
 }
 
-/* Page veil fade */
-const veil = document.getElementById('page-veil');
-if (veil) {
-  window.addEventListener('load', () => setTimeout(() => veil.classList.add('is-gone'), 700));
-  setTimeout(() => veil.classList.add('is-gone'), 1800);
+/* Quiet parallax on the one photo that asks for it. */
+const parallaxNodes = document.querySelectorAll('.parallax-media');
+if (parallaxNodes.length) {
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight;
+    parallaxNodes.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > vh) return;
+      const progress = (vh - rect.top) / (vh + rect.height);
+      const speed = parseFloat(el.dataset.parallax || '0.12');
+      el.style.transform = `translate3d(0, ${(progress - 0.5) * 80 * speed}px, 0) scale(1.1)`;
+    });
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+  update();
 }
-
-/* Gold cursor dot (desktop) */
-if (window.matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
-  const dot = document.createElement('div');
-  dot.className = 'cursor-dot';
-  document.body.appendChild(dot);
-  let x = 0, y = 0, tx = 0, ty = 0;
-  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; dot.classList.add('is-visible'); });
-  document.addEventListener('mouseover', e => { if (e.target.closest('a, button')) dot.classList.add('is-hover'); });
-  document.addEventListener('mouseout', e => { if (e.target.closest('a, button')) dot.classList.remove('is-hover'); });
-  (function loop(){ x += (tx-x)*0.18; y += (ty-y)*0.18; dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`; requestAnimationFrame(loop); })();
-}
-</script>
-
-<script>
-/* Shared parallax + cursor (Lua's Beauty) */
-(function(){
-  // Parallax media
-  const nodes = document.querySelectorAll('.parallax-media');
-  if (nodes.length) {
-    let ticking = false;
-    const update = () => {
-      const vh = window.innerHeight;
-      nodes.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.bottom < -200 || rect.top > vh + 200) return;
-        const progress = (vh - rect.top) / (vh + rect.height);
-        const speed = parseFloat(el.dataset.parallax || '0.15');
-        el.style.transform = `translate3d(0, ${(progress - 0.5) * 100 * speed}px, 0) scale(1.15)`;
-      });
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
-    update();
-  }
-  // Page veil fade
-  const veil = document.getElementById('page-veil');
-  if (veil) {
-    window.addEventListener('load', () => setTimeout(() => veil.classList.add('is-gone'), 700));
-    setTimeout(() => veil.classList.add('is-gone'), 1800);
-  }
-  // Gold cursor (desktop)
-  if (window.matchMedia('(hover: hover) and (min-width: 1025px)').matches && !document.querySelector('.cursor-dot')) {
-    const dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    document.body.appendChild(dot);
-    let x = 0, y = 0, tx = 0, ty = 0;
-    document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; dot.classList.add('is-visible'); });
-    document.addEventListener('mouseover', e => { if (e.target.closest('a, button')) dot.classList.add('is-hover'); });
-    document.addEventListener('mouseout', e => { if (e.target.closest('a, button')) dot.classList.remove('is-hover'); });
-    (function loop(){ x += (tx-x)*0.18; y += (ty-y)*0.18; dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`; requestAnimationFrame(loop); })();
-  }
-})();
 </script>
 </body>
 </html>
